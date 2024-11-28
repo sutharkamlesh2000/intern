@@ -1,0 +1,1001 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version:Odoo Server 17.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date:2024-05-10 05:36+0000"
+"PO-Revision-Date:2024-05-10 05:36+0000"
+"Last-Translator:"
+"Language-Team:"
+"MIME-Version:1.0"
+"Content-Type:text/plain; charset=UTF-8"
+"Content-Transfer-Encoding:"
+"Plural-Forms:"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.student_report_action
+msgid "'Student Profile'"
+msgstr "„Профил на ученик“"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.schools_report_action
+msgid "(object.name+'.pdf')"
+msgstr "(име на обект+'.pdf')"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.school_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p t-field=\"object.name\">Dear <br> In your school, you have these courses. </p>\n"
+"                <table class=\"table table-striped\">\n"
+"                    <thead>\n"
+"                        <tr>\n"
+"                            <th class=\"text-center\">Sr no</th>\n"
+"                            <th class=\"text-center\">Course</th>\n"
+"                        </tr>\n"
+"                    </thead>\n"
+"                    <tbody>\n"
+"                        <t t-if=\"object.courses_ids\">\n"
+"                            <t t-set=\"i\" t-value=\"1\"></t>\n"
+"                            <t t-foreach=\"object.courses_ids\" t-as=\"course\">\n"
+"                                <tr>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"i\"></span>\n"
+"                                        <t t-set=\"i\" t-value=\"i+1\"></t>\n"
+"                                    </td>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"course.course_name\"></span>\n"
+"                                    </td>\n"
+"                                </tr>\n"
+"                            </t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <tr>\n"
+"                                <td class=\"text-center\" scope=\"row\">\n"
+"                                    No courses found\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </t>\n"
+"                    </tbody>\n"
+"                </table> \n"
+"                <br>\n"
+"                Congratulations on your school registration! Thankyou </div>\n"
+"            <div class=\"\">\n"
+"                <p> Test condition statement <p t-if=\"object.name == 'Mayur Public School'\">\n"
+"                        True\n"
+"                    </p>\n"
+"                    <p t-else=\"\">\n"
+"                        False\n"
+"                    </p>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p t-field=\"object.name\">Уважаеми <br> Във вашето училище имате тези курсове. </p>\n"
+" <table class=\"table table-striped\">\n"
+" <thead>\n"
+" <tr>\n"
+" <th class=\"text-center\">Sr no</th>\\ n <th class=\"text-center\">Курс</th>\n"
+" </tr>\n"
+" </thead>\n"
+" <tbody>\n"
+" <t t-if=\"object.courses_ids\" >\n"
+" <t t-set=\"i\" t-value=\"1\"></t>\n"
+" <t t-foreach=\"object.courses_ids\" t-as=\"курс \">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" <span t-esc=\"i\"></span>\n"
+" < t t-set=\"i\" t-value=\"i+1\"></t>\n"
+" </td>\n"
+" <td class=\"text-center\" scope=\"row \">\n"
+" <span t-esc=\"course.course_name\"></span>\n"
+" </td>\n"
+" </tr>\n"
+" </t>\n"
+" </t>\n"
+" < t t-else=\"\">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" Няма намерени курсове\n"
+" </td>\n"
+" < /tr>\n"
+" </t>\n"
+" </tbody>\n"
+" </table> \n"
+" <br>\n"
+" Поздравления за регистрацията ви в училище! Благодаря ви </div>\n"
+" <div class=\"\">\n"
+" <p> Изявление за тестово условие <p t-if=\"object.name == 'Mayur Public School'\">\n"
+" Вярно\n"
+" </p>\n"
+" <p t-else=\"\">\n"
+" Невярно\n"
+" </p>\n"
+" </p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.student_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear <p t-field=\"object.name\"></p>\n"
+"                </p> Congratulations! Your\n"
+"                application has been selected. Thankyou <p t-esc=\"object.school_id.name\"></p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p>Уважаеми <p t-field=\"object.name\"></p>\n"
+" </p> Поздравления! Вашето\n"
+" приложение е избрано. Благодаря ви <p t-esc=\"object.school_id.name\"></p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Course</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Няма курс</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Faculty</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Без преподавател</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Student</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Няма ученик</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction
+msgid "Action Needed"
+msgstr "Необходимо е действие"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_ids
+msgid "Activities"
+msgstr "дейности"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Декорация за изключение на дейността"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_state
+msgid "Activity State"
+msgstr "Състояние на активност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Икона за тип дейност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__address
+msgid "Address"
+msgstr "Адрес"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__age
+msgid "Age"
+msgstr "Възраст"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__priority
+msgid "Appreciation"
+msgstr "признателност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__assigned_courses_id
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Assigned Courses"
+msgstr "Назначени курсове"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_attachment_count
+msgid "Attachment Count"
+msgstr "Брой прикачени файлове"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__dob
+msgid "Birth Date"
+msgstr "Рождена дата"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__cancel
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Cancel"
+msgstr "Отказ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__city
+#: model:ir.model.fields,field_description:employee_management.field_school_student__city
+msgid "City"
+msgstr "град"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__confirm
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Confirm"
+msgstr "Потвърдете"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.school_mail_template
+msgid "Congratulations on your school registration!"
+msgstr "Поздравления за регистрацията ви в училище!"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.student_mail_template
+msgid "Congratulations! Your application has been selected."
+msgstr "Честито! Вашето приложение е избрано."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__country
+#: model:ir.model.fields,field_description:employee_management.field_school_student__country
+msgid "Country"
+msgstr "Държава"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_courses
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__course_name
+#: model:ir.ui.menu,name:employee_management.menu_courses
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Course"
+msgstr "курс"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.courses_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__courses_ids
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Courses"
+msgstr "Курсове"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_uid
+msgid "Created by"
+msgstr "Създадено от"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_date
+msgid "Created on"
+msgstr "Създадено на"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__display_name
+msgid "Display Name"
+msgstr "Екранно име"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_profile
+msgid "Display profile"
+msgstr "Показване на профил"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Doesn't have Linkedin profile"
+msgstr "Няма профил в Linkedin"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__draft
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+msgid "Draft"
+msgstr "Чернова"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__email
+#: model:ir.model.fields,field_description:employee_management.field_school_student__email
+msgid "Email"
+msgstr "електронна поща"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Enroll\n"
+"                                            In"
+msgstr ""
+"Enroll\n"
+"                                            In"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__enroll_course_id
+msgid "Enroll Course"
+msgstr "Запишете се за курс"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Enroll In"
+msgstr "Записване в"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__3
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__3
+msgid "Excellent"
+msgstr "Отлично"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__external_staff_ids
+msgid "External Staff"
+msgstr "Външен персонал"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculties"
+msgstr "Факултети"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.faculty_model_action
+#: model:ir.ui.menu,name:employee_management.menu_faculty
+msgid "Faculty"
+msgstr "Факултет"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_faculty
+msgid "Faculty "
+msgstr "Факултет"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_graph
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_pivot
+msgid "Faculty Analysis"
+msgstr "Анализ на факултета"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_calendar
+msgid "Faculty Calendar"
+msgstr "Факултетен календар"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__faculty_line
+msgid "Faculty Line"
+msgstr "Факултетна линия"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__faculty_name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculty Name"
+msgstr "Име на факултета"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__mother_name
+msgid "Father's name"
+msgstr "Бащино име"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__female
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__female
+msgid "Female"
+msgstr "Женски пол"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_follower_ids
+msgid "Followers"
+msgstr "Последователи"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Последователи (Партньори)"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Страхотна икона на шрифта, напр. фа-задачи"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__parent_contect_number
+msgid "Gaudium number"
+msgstr "Число радост"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__gender
+#: model:ir.model.fields,field_description:employee_management.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Gender"
+msgstr "Пол"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__1
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__1
+msgid "Good"
+msgstr "добре"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__has_message
+msgid "Has Message"
+msgstr "Има съобщение"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__height
+msgid "Height"
+msgstr "Височина"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__id
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__id
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__id
+#: model:ir.model.fields,field_description:employee_management.field_school_student__id
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__id
+msgid "ID"
+msgstr "документ за самоличност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon"
+msgstr "Икона"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Икона за обозначаване на дейност по изключение."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Ако е отметнато, новите съобщения изискват вашето внимание."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Ако е отметнато, някои съобщения имат грешка при доставката."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_is_follower
+msgid "Is Follower"
+msgstr "Е последовател"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__is_external_staff
+msgid "Is external"
+msgstr "Е външно"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_1
+msgid "Jin school"
+msgstr "Джин училище"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__start_date
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Joining Date"
+msgstr "Дата на присъединяване"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Последна актуализация от"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "Последна актуализация на"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__end_date
+msgid "Last Working date"
+msgstr "Последна работна дата"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__logo
+msgid "Logo"
+msgstr "Лого"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__male
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__male
+msgid "Male"
+msgstr "Мъжки"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_sale_order__manager_id
+msgid "Manager"
+msgstr "Управител"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.action_mark_as_done
+msgid "Mark as Confirm"
+msgstr "Маркирайте като потвърждение"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_2
+msgid "Mayur Public School"
+msgstr "Държавно училище Mayur"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error
+msgid "Message Delivery error"
+msgstr "Грешка при доставката на съобщение"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_ids
+msgid "Messages"
+msgstr "Съобщения"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__father_name
+msgid "Mother's name"
+msgstr "Майчино име"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Краен срок за моята дейност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "Name"
+msgstr "Име"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__city
+msgid "New City"
+msgstr "Нов град"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__country
+msgid "New Country"
+msgstr "Нова страна"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__states
+msgid "New States"
+msgstr "Нови щати"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__street
+msgid "New Street"
+msgstr "Нова улица"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__zip_code
+msgid "New Zip Code"
+msgstr "Нов пощенски код"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Next"
+msgstr "Следващия"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Краен срок за следваща дейност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_summary
+msgid "Next Activity Summary"
+msgstr "Резюме на следващата дейност"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_id
+msgid "Next Activity Type"
+msgstr "Следващ вид дейност"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__0
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__0
+msgid "Normal"
+msgstr "нормално"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Брой действия"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of errors"
+msgstr "Брой грешки"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Брой съобщения, изискващи действие"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Брой съобщения с грешка при доставката"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_city
+msgid "Old City"
+msgstr "Стар град"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_country
+msgid "Old Country"
+msgstr "Стара страна"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_states
+msgid "Old States"
+msgstr "Стари държави"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_street
+msgid "Old Street"
+msgstr "Старата улица"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_zip_code
+msgid "Old Zip Code"
+msgstr "Стар пощенски код"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__phone
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__phone
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_tree
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "Print"
+msgstr "Печат"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__private
+msgid "Private School"
+msgstr "Частно училище"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Profile"
+msgstr "Профил"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__public
+msgid "Public School"
+msgstr "Държавно училище"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__rank
+msgid "Rank"
+msgstr "Ранг"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__rating
+msgid "Rating"
+msgstr "Рейтинг"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_user_id
+msgid "Responsible User"
+msgstr "Отговорен потребител"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Roll\n"
+"                                            no"
+msgstr ""
+"Roll\n"
+"                                            no"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__roll_no
+msgid "Roll No."
+msgstr "Ролка №"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Roll no"
+msgstr "Ролка бр"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_3
+msgid "SDA Public School"
+msgstr "SDA Държавно училище"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Грешка при доставката на SMS"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_sale_order
+msgid "Sales Order"
+msgstr "Поръчка за продажба"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.schools_report_action
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__school_id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_student__school_id
+#: model:ir.ui.menu,name:employee_management.menu_school_profile
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "School"
+msgstr "Училище"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.school_mail_template
+msgid "School Email Template"
+msgstr "Шаблон за училищен имейл"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__s_id
+msgid "School ID"
+msgstr "Училищен ID"
+
+#. module: employee_management
+#: model:ir.ui.menu,name:employee_management.menu_schoool_management_root
+msgid "School Management"
+msgstr "Училищен мениджмънт"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_profile_model_action
+#: model:ir.model,name:employee_management.model_school_profile
+msgid "School Profile"
+msgstr "Училищен профил"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_wizard_action
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "School Wizard"
+msgstr "Училищен магьосник"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_profile_update_wizard
+msgid "School wizard"
+msgstr "Училищен магьосник"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail"
+msgstr "Изпрати писмо"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail with compose"
+msgstr "Изпратете имейл с ново съобщение"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Sr no"
+msgstr "Старши №"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__states
+#: model:ir.model.fields,field_description:employee_management.field_school_student__states
+msgid "State"
+msgstr "състояние"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Състояние въз основа на дейности\n"
+"Просрочени: Крайният срок вече е изтекъл\n"
+"Днес: Датата на дейност е днес\n"
+"Планирани: Бъдещи дейности."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__step
+msgid "Step"
+msgstr "стъпка"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__street
+#: model:ir.model.fields,field_description:employee_management.field_school_student__street
+msgid "Street"
+msgstr "улица"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_student__name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__student_ids
+#: model:ir.ui.menu,name:employee_management.menu_student
+msgid "Student"
+msgstr "Студент"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.ir_cron_school_student_send_ir_actions_server
+msgid "Student "
+msgstr "Студент"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_student_update_wizard
+msgid "Student Address wizard"
+msgstr "Съветник за адрес на студент"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.student_mail_template
+msgid "Student Email Template"
+msgstr "Шаблон за имейл на студент"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__student_line
+msgid "Student Line"
+msgstr "Студентска линия"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student New Address"
+msgstr "Студентски нов адрес"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student Old Address"
+msgstr "Студентски стар адрес"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.student_report_action
+msgid "Student Profile"
+msgstr "Профил на ученика"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_wizard_action
+msgid "Student Update Wizard"
+msgstr "Съветник за актуализиране на студенти"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_address
+msgid "Student address"
+msgstr "Адрес на студента"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_student
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Students"
+msgstr "Ученици"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__total_faculty
+msgid "Total Faculty"
+msgstr "Общ факултет"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total course"
+msgstr "Общ курс"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total faculty"
+msgstr "Общо преподаватели"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__school_type
+msgid "Type of School "
+msgstr "Тип училище"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип на записаната дейност по изключение."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__user_ids
+msgid "User"
+msgstr "Потребител"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__2
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__2
+msgid "Very Good"
+msgstr "Много добре"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_4
+msgid "Vijay International School"
+msgstr "Международно училище Виджай"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__website_message_ids
+msgid "Website Messages"
+msgstr "Съобщения на уебсайта"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__website_message_ids
+msgid "Website communication history"
+msgstr "История на комуникацията на уебсайта"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__zip_code
+#: model:ir.model.fields,field_description:employee_management.field_school_student__zip_code
+msgid "Zip Code"
+msgstr "Пощенски код"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__linkedin_url
+msgid "`Linkedin url`"
+msgstr "„URL адрес на Linkedin“."
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "barcode"
+msgstr "баркод"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "course"
+msgstr "курс"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "dp"
+msgstr "dp"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "faculty"
+msgstr "факултет"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.weblearns_layout
+msgid "logo"
+msgstr "лого"
+

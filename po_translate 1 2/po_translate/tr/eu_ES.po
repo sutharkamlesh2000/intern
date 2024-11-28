@@ -1,0 +1,1001 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version:Odoo Server 17.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date:2024-05-10 05:36+0000"
+"PO-Revision-Date:2024-05-10 05:36+0000"
+"Last-Translator:"
+"Language-Team:"
+"MIME-Version:1.0"
+"Content-Type:text/plain; charset=UTF-8"
+"Content-Transfer-Encoding:"
+"Plural-Forms:"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.student_report_action
+msgid "'Student Profile'"
+msgstr "\"Ikaslearen profila\""
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.schools_report_action
+msgid "(object.name+'.pdf')"
+msgstr "(objektu.izena+'.pdf')"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.school_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p t-field=\"object.name\">Dear <br> In your school, you have these courses. </p>\n"
+"                <table class=\"table table-striped\">\n"
+"                    <thead>\n"
+"                        <tr>\n"
+"                            <th class=\"text-center\">Sr no</th>\n"
+"                            <th class=\"text-center\">Course</th>\n"
+"                        </tr>\n"
+"                    </thead>\n"
+"                    <tbody>\n"
+"                        <t t-if=\"object.courses_ids\">\n"
+"                            <t t-set=\"i\" t-value=\"1\"></t>\n"
+"                            <t t-foreach=\"object.courses_ids\" t-as=\"course\">\n"
+"                                <tr>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"i\"></span>\n"
+"                                        <t t-set=\"i\" t-value=\"i+1\"></t>\n"
+"                                    </td>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"course.course_name\"></span>\n"
+"                                    </td>\n"
+"                                </tr>\n"
+"                            </t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <tr>\n"
+"                                <td class=\"text-center\" scope=\"row\">\n"
+"                                    No courses found\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </t>\n"
+"                    </tbody>\n"
+"                </table> \n"
+"                <br>\n"
+"                Congratulations on your school registration! Thankyou </div>\n"
+"            <div class=\"\">\n"
+"                <p> Test condition statement <p t-if=\"object.name == 'Mayur Public School'\">\n"
+"                        True\n"
+"                    </p>\n"
+"                    <p t-else=\"\">\n"
+"                        False\n"
+"                    </p>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p t-field=\"object.name\">Katia <br> Zure ikastetxean, ikastaro hauek dituzu. </p>\n"
+" <table class=\"table table-striped\">\n"
+" <thead>\n"
+" <tr>\n"
+" <th class=\"text-center\">Jauna ez</th>\\ n <th class=\"text-center\">Ikastaroa</th>\n"
+" </tr>\n"
+" </thead>\n"
+" <tbody>\n"
+" <t t-if=\"object.courses_ids\" >\n"
+" <t t-set=\"i\" t-value=\"1\"></t>\n"
+" <t t-foreach=\"object.courses_ids\" t-as=\"ikastaroa \">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" <span t-esc=\"i\"></span>\n"
+" < t t-set=\"i\" t-value=\"i+1\"></t>\n"
+" </td>\n"
+" <td class=\"text-center\" scope=\"errenkada \">\n"
+" <span t-esc=\"course.course_name\"></span>\n"
+" </td>\n"
+" </tr>\n"
+" </t>\n"
+" </t>\n"
+" < t t-else=\"\">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" Ez da ikastarorik aurkitu\n"
+" </td>\n"
+" < /tr>\n"
+" </t>\n"
+" </tbody>\n"
+" </table> \n"
+" <br>\n"
+" Zorionak zure eskolan izena emateagatik! Eskerrik asko </div>\n"
+" <div class=\"\">\n"
+" <p> Proba-baldintzen adierazpena <p t-if=\"object.name == 'Mayur Public School'\">\n"
+" Egia\n"
+" </p>\n"
+" <p t-else=\"\">\n"
+" Gezurra\n"
+" </p>\n"
+" </p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.student_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear <p t-field=\"object.name\"></p>\n"
+"                </p> Congratulations! Your\n"
+"                application has been selected. Thankyou <p t-esc=\"object.school_id.name\"></p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; betegarria: 0px;\">\n"
+" <p>Katia <p t-field=\"object.name\"></p>\n"
+" </p> Zorionak! Zure\n"
+" aplikazioa hautatu da. Eskerrik asko <p t-esc=\"object.school_id.name\"></p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Course</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Ikastarorik ez</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Faculty</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Fakultaterik ez</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Student</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Ikaslerik ez</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction
+msgid "Action Needed"
+msgstr "Ekintza Beharrezkoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_ids
+msgid "Activities"
+msgstr "Jarduerak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Jarduera Salbuespen Dekorazioa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_state
+msgid "Activity State"
+msgstr "Jardueraren egoera"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Jarduera motaren ikonoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__address
+msgid "Address"
+msgstr "Helbidea"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__age
+msgid "Age"
+msgstr "Adina"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__priority
+msgid "Appreciation"
+msgstr "Estimazioa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__assigned_courses_id
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Assigned Courses"
+msgstr "Esleitutako Ikastaroak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_attachment_count
+msgid "Attachment Count"
+msgstr "Eranskinen zenbaketa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__dob
+msgid "Birth Date"
+msgstr "Urtebetetze data"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__cancel
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Cancel"
+msgstr "Utzi"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__city
+#: model:ir.model.fields,field_description:employee_management.field_school_student__city
+msgid "City"
+msgstr "Hiria"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__confirm
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Confirm"
+msgstr "Berretsi"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.school_mail_template
+msgid "Congratulations on your school registration!"
+msgstr "Zorionak eskolan izena emateagatik!"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.student_mail_template
+msgid "Congratulations! Your application has been selected."
+msgstr "Zorionak! Zure aplikazioa hautatu da."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__country
+#: model:ir.model.fields,field_description:employee_management.field_school_student__country
+msgid "Country"
+msgstr "Herrialdea"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_courses
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__course_name
+#: model:ir.ui.menu,name:employee_management.menu_courses
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Course"
+msgstr "Ikastaroa"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.courses_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__courses_ids
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Courses"
+msgstr "Ikastaroak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_uid
+msgid "Created by"
+msgstr "Sortua"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_date
+msgid "Created on"
+msgstr "urtean sortua"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__display_name
+msgid "Display Name"
+msgstr "Bistaratzeko izena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_profile
+msgid "Display profile"
+msgstr "Bistaratu profila"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Doesn't have Linkedin profile"
+msgstr "Ez du Linkedin profilik"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__draft
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+msgid "Draft"
+msgstr "Zirriborroa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__email
+#: model:ir.model.fields,field_description:employee_management.field_school_student__email
+msgid "Email"
+msgstr "Posta elektronikoa"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Enroll\n"
+"                                            In"
+msgstr ""
+"Enroll\n"
+"                                            In"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__enroll_course_id
+msgid "Enroll Course"
+msgstr "Matrikula ikastaroa"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Enroll In"
+msgstr "Izena eman"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__3
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__3
+msgid "Excellent"
+msgstr "Bikaina"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__external_staff_ids
+msgid "External Staff"
+msgstr "Kanpoko Langileak"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculties"
+msgstr "Fakultateak"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.faculty_model_action
+#: model:ir.ui.menu,name:employee_management.menu_faculty
+msgid "Faculty"
+msgstr "Fakultatea"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_faculty
+msgid "Faculty "
+msgstr "Fakultatea"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_graph
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_pivot
+msgid "Faculty Analysis"
+msgstr "Fakultateko Analisia"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_calendar
+msgid "Faculty Calendar"
+msgstr "Fakultateko Egutegia"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__faculty_line
+msgid "Faculty Line"
+msgstr "Fakultateko Ildoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__faculty_name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculty Name"
+msgstr "Fakultatearen izena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__mother_name
+msgid "Father's name"
+msgstr "Aitaren izena"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__female
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__female
+msgid "Female"
+msgstr "Emakumezkoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_follower_ids
+msgid "Followers"
+msgstr "Jarraitzaileak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Jarraitzaileak (bazkideak)"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Letra-tipo ikaragarria ikonoa adibidez. fa-zereginak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__parent_contect_number
+msgid "Gaudium number"
+msgstr "Pozaren zenbakia"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__gender
+#: model:ir.model.fields,field_description:employee_management.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Gender"
+msgstr "Generoa"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__1
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__1
+msgid "Good"
+msgstr "Ona"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__has_message
+msgid "Has Message"
+msgstr "Mezua dauka"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__height
+msgid "Height"
+msgstr "Altuera"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__id
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__id
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__id
+#: model:ir.model.fields,field_description:employee_management.field_school_student__id
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon"
+msgstr "Ikonoa"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Salbuespen jarduera bat adierazteko ikonoa."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Hautatuta, mezu berriek zure arreta eskatzen dute."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Hautatzen bada, mezu batzuek entrega-errore bat dute."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_is_follower
+msgid "Is Follower"
+msgstr "Jarraitzailea da"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__is_external_staff
+msgid "Is external"
+msgstr "Kanpokoa da"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_1
+msgid "Jin school"
+msgstr "Jin eskola"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__start_date
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Joining Date"
+msgstr "Batzeko data"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Azken eguneratua:"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "Azken eguneratzea egunean"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__end_date
+msgid "Last Working date"
+msgstr "Azken lan-data"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__logo
+msgid "Logo"
+msgstr "Logotipoa"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__male
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__male
+msgid "Male"
+msgstr "Gizonezkoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_sale_order__manager_id
+msgid "Manager"
+msgstr "Kudeatzailea"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.action_mark_as_done
+msgid "Mark as Confirm"
+msgstr "Markatu Baieztatu gisa"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_2
+msgid "Mayur Public School"
+msgstr "Mayur Herri Eskola"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore bat mezua bidaltzean"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_ids
+msgid "Messages"
+msgstr "Mezuak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__father_name
+msgid "Mother's name"
+msgstr "Amaren izena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Nire jarduera-epea"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "Name"
+msgstr "Izena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__city
+msgid "New City"
+msgstr "Hiri Berria"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__country
+msgid "New Country"
+msgstr "Herri Berria"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__states
+msgid "New States"
+msgstr "Estatu berriak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__street
+msgid "New Street"
+msgstr "Kale Berria"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__zip_code
+msgid "New Zip Code"
+msgstr "Posta Kode berria"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Next"
+msgstr "Hurrengoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hurrengo Jardueren Epea"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_summary
+msgid "Next Activity Summary"
+msgstr "Hurrengo jardueren laburpena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_id
+msgid "Next Activity Type"
+msgstr "Hurrengo jarduera mota"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__0
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__0
+msgid "Normal"
+msgstr "Normala"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Ekintza kopurua"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of errors"
+msgstr "Akats kopurua"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Ekintza behar duten mezu kopurua"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Bidalketa-errorea duten mezu kopurua"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_city
+msgid "Old City"
+msgstr "Hiri Zaharra"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_country
+msgid "Old Country"
+msgstr "Herri Zaharra"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_states
+msgid "Old States"
+msgstr "Estatu Zaharrak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_street
+msgid "Old Street"
+msgstr "Kale Zaharra"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_zip_code
+msgid "Old Zip Code"
+msgstr "Posta Kode Zaharra"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__phone
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__phone
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_tree
+msgid "Phone"
+msgstr "Mugikorra"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "Print"
+msgstr "Inprimatu"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__private
+msgid "Private School"
+msgstr "Eskola pribatua"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Profile"
+msgstr "Profila"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__public
+msgid "Public School"
+msgstr "Eskola Publikoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__rank
+msgid "Rank"
+msgstr "Sailkapena"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__rating
+msgid "Rating"
+msgstr "Balorazioa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_user_id
+msgid "Responsible User"
+msgstr "Erabiltzaile arduratsua"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Roll\n"
+"                                            no"
+msgstr ""
+"Roll\n"
+"                                            no"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__roll_no
+msgid "Roll No."
+msgstr "Errolda zk."
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Roll no"
+msgstr "Errolda zk"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_3
+msgid "SDA Public School"
+msgstr "SDA Herri Eskola"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMSak bidaltzeko errorea"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_sale_order
+msgid "Sales Order"
+msgstr "Salmenta eskaera"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.schools_report_action
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__school_id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_student__school_id
+#: model:ir.ui.menu,name:employee_management.menu_school_profile
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "School"
+msgstr "Eskola"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.school_mail_template
+msgid "School Email Template"
+msgstr "Eskolako posta elektronikoaren txantiloia"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__s_id
+msgid "School ID"
+msgstr "Ikastetxearen NAN"
+
+#. module: employee_management
+#: model:ir.ui.menu,name:employee_management.menu_schoool_management_root
+msgid "School Management"
+msgstr "Ikastetxeko Zuzendaritza"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_profile_model_action
+#: model:ir.model,name:employee_management.model_school_profile
+msgid "School Profile"
+msgstr "Ikastetxearen Profila"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_wizard_action
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "School Wizard"
+msgstr "Eskolako morroia"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_profile_update_wizard
+msgid "School wizard"
+msgstr "Eskolako morroia"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail"
+msgstr "Bidali posta"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail with compose"
+msgstr "Bidali posta konposatuarekin"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Sr no"
+msgstr "Sr. ez"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__states
+#: model:ir.model.fields,field_description:employee_management.field_school_student__states
+msgid "State"
+msgstr "Estatu"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__state
+msgid "Status"
+msgstr "Egoera"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Jardueren araberako egoera\n"
+"Atzeratuta: Epea dagoeneko gainditu da\n"
+"Gaur: Jardueraren data gaur da\n"
+"Planifikatuta: Etorkizuneko jarduerak."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__step
+msgid "Step"
+msgstr "Urratsa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__street
+#: model:ir.model.fields,field_description:employee_management.field_school_student__street
+msgid "Street"
+msgstr "Kalea"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_student__name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__student_ids
+#: model:ir.ui.menu,name:employee_management.menu_student
+msgid "Student"
+msgstr "Ikaslea"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.ir_cron_school_student_send_ir_actions_server
+msgid "Student "
+msgstr "Ikaslea"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_student_update_wizard
+msgid "Student Address wizard"
+msgstr "Ikaslearen helbidearen morroia"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.student_mail_template
+msgid "Student Email Template"
+msgstr "Ikaslearen posta elektronikoaren txantiloia"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__student_line
+msgid "Student Line"
+msgstr "Ikasleen lerroa"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student New Address"
+msgstr "Ikaslearen Helbide Berria"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student Old Address"
+msgstr "Ikaslearen Helbide Zaharra"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.student_report_action
+msgid "Student Profile"
+msgstr "Ikaslearen profila"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_wizard_action
+msgid "Student Update Wizard"
+msgstr "Ikasleen eguneraketa morroia"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_address
+msgid "Student address"
+msgstr "Ikaslearen helbidea"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_student
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Students"
+msgstr "Ikasleak"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__total_faculty
+msgid "Total Faculty"
+msgstr "Fakultate osoa"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total course"
+msgstr "Ikastaro osoa"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total faculty"
+msgstr "Irakasle osoa"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__school_type
+msgid "Type of School "
+msgstr "Ikastetxe mota"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Erregistratutako salbuespen-jarduera mota."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__user_ids
+msgid "User"
+msgstr "Erabiltzailea"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__2
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__2
+msgid "Very Good"
+msgstr "Oso ondo"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_4
+msgid "Vijay International School"
+msgstr "Vijay Nazioarteko Eskola"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__website_message_ids
+msgid "Website Messages"
+msgstr "Webguneko mezuak"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__website_message_ids
+msgid "Website communication history"
+msgstr "Webgunearen komunikazio-historia"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__zip_code
+#: model:ir.model.fields,field_description:employee_management.field_school_student__zip_code
+msgid "Zip Code"
+msgstr "Posta Kodea"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__linkedin_url
+msgid "`Linkedin url`"
+msgstr "`Linkedin url`"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "barcode"
+msgstr "barra-kodea"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "course"
+msgstr "noski"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "dp"
+msgstr "dp"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "faculty"
+msgstr "fakultatea"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.weblearns_layout
+msgid "logo"
+msgstr "logotipoa"
+

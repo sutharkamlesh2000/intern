@@ -1,0 +1,1000 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version:Odoo Server 17.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date:2024-05-10 05:36+0000"
+"PO-Revision-Date:2024-05-10 05:36+0000"
+"Last-Translator:"
+"Language-Team:"
+"MIME-Version:1.0"
+"Content-Type:text/plain; charset=UTF-8"
+"Content-Transfer-Encoding:"
+"Plural-Forms:"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.student_report_action
+msgid "'Student Profile'"
+msgstr "“學生檔案”"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.schools_report_action
+msgid "(object.name+'.pdf')"
+msgstr "(對象.名稱+'.pdf')"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.school_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p t-field=\"object.name\">Dear <br> In your school, you have these courses. </p>\n"
+"                <table class=\"table table-striped\">\n"
+"                    <thead>\n"
+"                        <tr>\n"
+"                            <th class=\"text-center\">Sr no</th>\n"
+"                            <th class=\"text-center\">Course</th>\n"
+"                        </tr>\n"
+"                    </thead>\n"
+"                    <tbody>\n"
+"                        <t t-if=\"object.courses_ids\">\n"
+"                            <t t-set=\"i\" t-value=\"1\"></t>\n"
+"                            <t t-foreach=\"object.courses_ids\" t-as=\"course\">\n"
+"                                <tr>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"i\"></span>\n"
+"                                        <t t-set=\"i\" t-value=\"i+1\"></t>\n"
+"                                    </td>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"course.course_name\"></span>\n"
+"                                    </td>\n"
+"                                </tr>\n"
+"                            </t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <tr>\n"
+"                                <td class=\"text-center\" scope=\"row\">\n"
+"                                    No courses found\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </t>\n"
+"                    </tbody>\n"
+"                </table> \n"
+"                <br>\n"
+"                Congratulations on your school registration! Thankyou </div>\n"
+"            <div class=\"\">\n"
+"                <p> Test condition statement <p t-if=\"object.name == 'Mayur Public School'\">\n"
+"                        True\n"
+"                    </p>\n"
+"                    <p t-else=\"\">\n"
+"                        False\n"
+"                    </p>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p t-field=\"object.name\">親愛的<br> 在你的學校，你有這些課程。 </p>\n"
+" <table class=\"table table-striped\">\n"
+" <thead>\n"
+" <tr>\n"
+" <th class=\"text-center\">進階編號</th>\\ n <th class=\"text-center\">課程</th>\n"
+" </tr>\n"
+" </thead>\n"
+" <tbody>\n"
+" <t t-if=\"object.courses_ids\" >\n"
+" <t t-set=\"i\" t-value=\"1\"></t>\n"
+" <t t-foreach=\"object.courses_ids\" t-as=\"course \">\n"
+" <tr>\n"
+" <td class=\"text-center\" range=\"row\">\n"
+" <span t-esc=\"i\"></span>\n"
+" < t t-set=\"i\" t-value=\"i+1\"></t>\n"
+" </td>\n"
+" <td class=\"text-center\" 範圍=\"行\">\n"
+" <span t-esc=\"course.course_name\"></span>\n"
+" </td>\n"
+" </tr>\n"
+" </t>\n"
+" </t>\n"
+" < t t-else=\"\">\n"
+" <tr>\n"
+" <td class=\"text-center\" range=\"row\">\n"
+" 找不到課程\n"
+" </td>\n"
+" < /tr>\n"
+" </t>\n"
+" </tbody>\n"
+" </table> \n"
+" <br>\n"
+" 恭喜您完成學校報名！謝謝</div>\n"
+" <div class=\"\">\n"
+" <p> 測試條件語句<p t-if=\"object.name == 'Mayur Public Sc​​hool'\">\n"
+" True\n"
+" </p>\n"
+" <p t-else=\"\">\n"
+" 錯誤\n"
+" </p>\n"
+" </p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.student_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear <p t-field=\"object.name\"></p>\n"
+"                </p> Congratulations! Your\n"
+"                application has been selected. Thankyou <p t-esc=\"object.school_id.name\"></p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p>親愛的<p t-field=\"object.name\"></p>\n"
+" </p> 恭喜！您的應用程式已被選取。謝謝 <p t-esc=\"object.school_id.name\"></p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Course</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>沒有課程</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Faculty</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>沒有教師</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Student</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>沒有學生</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction
+msgid "Action Needed"
+msgstr "需要採取行動"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_ids
+msgid "Activities"
+msgstr "活動"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "活動異常裝飾"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_state
+msgid "Activity State"
+msgstr "活動狀態"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "活動類型圖示"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__address
+msgid "Address"
+msgstr "地址"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__age
+msgid "Age"
+msgstr "年齡"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__priority
+msgid "Appreciation"
+msgstr "欣賞"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__assigned_courses_id
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Assigned Courses"
+msgstr "指定課程"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_attachment_count
+msgid "Attachment Count"
+msgstr "附件數"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__dob
+msgid "Birth Date"
+msgstr "出生日期"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__cancel
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Cancel"
+msgstr "取消"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__city
+#: model:ir.model.fields,field_description:employee_management.field_school_student__city
+msgid "City"
+msgstr "城市"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__confirm
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Confirm"
+msgstr "確認"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.school_mail_template
+msgid "Congratulations on your school registration!"
+msgstr "恭喜您完成學校註冊！"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.student_mail_template
+msgid "Congratulations! Your application has been selected."
+msgstr "恭喜！您的申請已被選中。"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__country
+#: model:ir.model.fields,field_description:employee_management.field_school_student__country
+msgid "Country"
+msgstr "國家"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_courses
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__course_name
+#: model:ir.ui.menu,name:employee_management.menu_courses
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Course"
+msgstr "課程"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.courses_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__courses_ids
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Courses"
+msgstr "培訓班"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_uid
+msgid "Created by"
+msgstr "由...製作"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_date
+msgid "Created on"
+msgstr "創建於"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__display_name
+msgid "Display Name"
+msgstr "顯示名稱"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_profile
+msgid "Display profile"
+msgstr "顯示設定檔"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Doesn't have Linkedin profile"
+msgstr "沒有 LinkedIn 個人資料"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__draft
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+msgid "Draft"
+msgstr "草稿"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__email
+#: model:ir.model.fields,field_description:employee_management.field_school_student__email
+msgid "Email"
+msgstr "電子郵件"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Enroll\n"
+"                                            In"
+msgstr ""
+"Enroll\n"
+"                                            In"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__enroll_course_id
+msgid "Enroll Course"
+msgstr "報名課程"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Enroll In"
+msgstr "報名參加"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__3
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__3
+msgid "Excellent"
+msgstr "出色的"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__external_staff_ids
+msgid "External Staff"
+msgstr "外部員工"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculties"
+msgstr "系"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.faculty_model_action
+#: model:ir.ui.menu,name:employee_management.menu_faculty
+msgid "Faculty"
+msgstr "學院"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_faculty
+msgid "Faculty "
+msgstr "學院"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_graph
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_pivot
+msgid "Faculty Analysis"
+msgstr "師資分析"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_calendar
+msgid "Faculty Calendar"
+msgstr "教師行事曆"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__faculty_line
+msgid "Faculty Line"
+msgstr "師資專線"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__faculty_name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculty Name"
+msgstr "學院名稱"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__mother_name
+msgid "Father's name"
+msgstr "父親的名字"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__female
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__female
+msgid "Female"
+msgstr "女性"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_follower_ids
+msgid "Followers"
+msgstr "追隨者"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "關注者（合作夥伴）"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "字體很棒的圖標，例如fa 任務"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__parent_contect_number
+msgid "Gaudium number"
+msgstr "歡樂數"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__gender
+#: model:ir.model.fields,field_description:employee_management.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Gender"
+msgstr "性別"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__1
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__1
+msgid "Good"
+msgstr "好的"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__has_message
+msgid "Has Message"
+msgstr "有留言"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__height
+msgid "Height"
+msgstr "高度"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__id
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__id
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__id
+#: model:ir.model.fields,field_description:employee_management.field_school_student__id
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon"
+msgstr "圖示"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "指示異常活動的圖示。"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "如果選中，則有新訊息需要您注意。"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "如果檢查，則某些訊息有傳送錯誤。"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_is_follower
+msgid "Is Follower"
+msgstr "是追隨者"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__is_external_staff
+msgid "Is external"
+msgstr "是外部的"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_1
+msgid "Jin school"
+msgstr "晉派"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__start_date
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Joining Date"
+msgstr "入職日期"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "最後更新者"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "最後更新時間"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__end_date
+msgid "Last Working date"
+msgstr "最後工作日期"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Linkedin"
+msgstr "領英"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__logo
+msgid "Logo"
+msgstr "標識"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__male
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__male
+msgid "Male"
+msgstr "男性"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_sale_order__manager_id
+msgid "Manager"
+msgstr "主管"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.action_mark_as_done
+msgid "Mark as Confirm"
+msgstr "標記為確認"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_2
+msgid "Mayur Public School"
+msgstr "馬尤爾公立學校"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error
+msgid "Message Delivery error"
+msgstr "訊息傳遞錯誤"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_ids
+msgid "Messages"
+msgstr "留言"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__father_name
+msgid "Mother's name"
+msgstr "母親的名字"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "我的活動截止日期"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "Name"
+msgstr "姓名"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__city
+msgid "New City"
+msgstr "新城市"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__country
+msgid "New Country"
+msgstr "新國家"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__states
+msgid "New States"
+msgstr "新州"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__street
+msgid "New Street"
+msgstr "新街"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__zip_code
+msgid "New Zip Code"
+msgstr "新郵遞區號"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Next"
+msgstr "下一個"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "下一個活動截止日期"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_summary
+msgid "Next Activity Summary"
+msgstr "下一步活動總結"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_id
+msgid "Next Activity Type"
+msgstr "下一個活動類型"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__0
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__0
+msgid "Normal"
+msgstr "普通的"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of Actions"
+msgstr "動作數量"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of errors"
+msgstr "錯誤數"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "需要操作的訊息數"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "發送錯誤的訊息數"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_city
+msgid "Old City"
+msgstr "古老的都市"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_country
+msgid "Old Country"
+msgstr "老國家"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_states
+msgid "Old States"
+msgstr "舊州"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_street
+msgid "Old Street"
+msgstr "古老的街道"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_zip_code
+msgid "Old Zip Code"
+msgstr "舊郵遞區號"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__phone
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__phone
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_tree
+msgid "Phone"
+msgstr "電話"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "Print"
+msgstr "列印"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__private
+msgid "Private School"
+msgstr "私立學校"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Profile"
+msgstr "輪廓"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__public
+msgid "Public School"
+msgstr "公立學校"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__rank
+msgid "Rank"
+msgstr "秩"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__rating
+msgid "Rating"
+msgstr "評分"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_user_id
+msgid "Responsible User"
+msgstr "負責任的用戶"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Roll\n"
+"                                            no"
+msgstr ""
+"Roll\n"
+"                                            no"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__roll_no
+msgid "Roll No."
+msgstr "卷號"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Roll no"
+msgstr "卷號"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_3
+msgid "SDA Public School"
+msgstr "SDA公立學校"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "簡訊發送錯誤"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_sale_order
+msgid "Sales Order"
+msgstr "銷售訂單"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.schools_report_action
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__school_id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_student__school_id
+#: model:ir.ui.menu,name:employee_management.menu_school_profile
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "School"
+msgstr "學校"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.school_mail_template
+msgid "School Email Template"
+msgstr "學校電子郵件模板"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__s_id
+msgid "School ID"
+msgstr "學校ID"
+
+#. module: employee_management
+#: model:ir.ui.menu,name:employee_management.menu_schoool_management_root
+msgid "School Management"
+msgstr "學校管理"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_profile_model_action
+#: model:ir.model,name:employee_management.model_school_profile
+msgid "School Profile"
+msgstr "學校簡介"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_wizard_action
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "School Wizard"
+msgstr "學校巫師"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_profile_update_wizard
+msgid "School wizard"
+msgstr "學校巫師"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail"
+msgstr "傳送郵件"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail with compose"
+msgstr "透過撰寫發送郵件"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Sr no"
+msgstr "先生沒有"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__states
+#: model:ir.model.fields,field_description:employee_management.field_school_student__states
+msgid "State"
+msgstr "狀態"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__state
+msgid "Status"
+msgstr "地位"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"基於活動的狀態\n"
+"逾期：截止日期已過\n"
+"今天：活動日期是今天\n"
+"計畫：未來的活動。"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__step
+msgid "Step"
+msgstr "步"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__street
+#: model:ir.model.fields,field_description:employee_management.field_school_student__street
+msgid "Street"
+msgstr "街道"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_student__name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__student_ids
+#: model:ir.ui.menu,name:employee_management.menu_student
+msgid "Student"
+msgstr "學生"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.ir_cron_school_student_send_ir_actions_server
+msgid "Student "
+msgstr "學生"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_student_update_wizard
+msgid "Student Address wizard"
+msgstr "學生地址嚮導"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.student_mail_template
+msgid "Student Email Template"
+msgstr "學生電子郵件模板"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__student_line
+msgid "Student Line"
+msgstr "學生專線"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student New Address"
+msgstr "學生新地址"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student Old Address"
+msgstr "學生舊地址"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.student_report_action
+msgid "Student Profile"
+msgstr "學生簡介"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_wizard_action
+msgid "Student Update Wizard"
+msgstr "學生更新嚮導"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_address
+msgid "Student address"
+msgstr "學生地址"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_student
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Students"
+msgstr "學生"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__total_faculty
+msgid "Total Faculty"
+msgstr "師資總數"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total course"
+msgstr "總課程"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total faculty"
+msgstr "教職員總數"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__school_type
+msgid "Type of School "
+msgstr "學校類型"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "記錄的異常活動的類型。"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__user_ids
+msgid "User"
+msgstr "使用者"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__2
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__2
+msgid "Very Good"
+msgstr "非常好"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_4
+msgid "Vijay International School"
+msgstr "維傑國際學校"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__website_message_ids
+msgid "Website Messages"
+msgstr "網站留言"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__website_message_ids
+msgid "Website communication history"
+msgstr "網站通訊歷史"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__zip_code
+#: model:ir.model.fields,field_description:employee_management.field_school_student__zip_code
+msgid "Zip Code"
+msgstr "郵遞區號"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__linkedin_url
+msgid "`Linkedin url`"
+msgstr "`Linkedin 網址`"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "barcode"
+msgstr "條碼"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "course"
+msgstr "課程"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "dp"
+msgstr "DP"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "faculty"
+msgstr "學院"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.weblearns_layout
+msgid "logo"
+msgstr "標識"
+

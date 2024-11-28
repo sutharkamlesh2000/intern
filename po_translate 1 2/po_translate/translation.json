@@ -1,0 +1,302 @@
+[
+  {
+    "file_name": "ar_001",
+    "code": "ar"
+  },
+  {
+    "file_name": "sq_AL",
+    "code": "sq"
+  },
+  {
+    "file_name": "am_ET",
+    "code": "am"
+  },
+  {
+    "file_name": "ar_SY",
+    "code": "ar"
+  },
+  {
+    "file_name": "eu_ES",
+    "code": "eu"
+  },
+  {
+    "file_name": "bn_IN",
+    "code": "bn"
+  },
+  {
+    "file_name": "bs_BA",
+    "code": "bs"
+  },
+  {
+    "file_name": "bg_BG",
+    "code": "bg"
+  },
+  {
+    "file_name": "ca_ES",
+    "code": "ca"
+  },
+  {
+    "file_name": "zh_CN",
+    "code": "zh-CN"
+  },
+  {
+    "file_name": "zh_TW",
+    "code": "zh-TW"
+  },
+  {
+    "file_name": "hr_HR",
+    "code": "hr"
+  },
+  {
+    "file_name": "cs_CZ",
+    "code": "cs"
+  },
+  {
+    "file_name": "da_DK",
+    "code": "da"
+  },
+  {
+    "file_name": "nl_BE",
+    "code": "nl"
+  },
+  {
+    "file_name": "nl_NL",
+    "code": "nl"
+  },
+  {
+    "file_name": "et_EE",
+    "code": "et"
+  },
+  {
+    "file_name": "fi_FI",
+    "code": "fi"
+  },
+  {
+    "file_name": "fr_BE",
+    "code": "fr"
+  },
+  {
+    "file_name": "fr_CA",
+    "code": "fr"
+  },
+  {
+    "file_name": "fr_CH",
+    "code": "fr"
+  },
+  {
+    "file_name": "fr_FR",
+    "code": "fr"
+  },
+  {
+    "file_name": "gl_ES",
+    "code": "gl"
+  },
+  {
+    "file_name": "ka_GE",
+    "code": "ka"
+  },
+  {
+    "file_name": "de_CH",
+    "code": "de"
+  },
+  {
+    "file_name": "de_DE",
+    "code": "de"
+  },
+  {
+    "file_name": "el_GR",
+    "code": "el"
+  },
+  {
+    "file_name": "gu_IN",
+    "code": "gu"
+  },
+  {
+    "file_name": "he_IL",
+    "code": "iw"
+  },
+  {
+    "file_name": "hi_IN",
+    "code": "hi"
+  },
+  {
+    "file_name": "hu_HU",
+    "code": "hu"
+  },
+  {
+    "file_name": "id_ID",
+    "code": "id"
+  },
+  {
+    "file_name": "it_IT",
+    "code": "it"
+  },
+  {
+    "file_name": "ja_JP",
+    "code": "ja"
+  },
+  {
+    "file_name": "km_KH",
+    "code": "km"
+  },
+  {
+    "file_name": "ko_KP",
+    "code": "ko"
+  },
+  {
+    "file_name": "ko_KR",
+    "code": "ko"
+  },
+  {
+    "file_name": "lo_LA",
+    "code": "lo"
+  },
+  {
+    "file_name": "lv_LV",
+    "code": "lv"
+  },
+  {
+    "file_name": "lt_LT",
+    "code": "lv"
+  },
+  {
+    "file_name": "lb_LU",
+    "code": "lb"
+  },
+  {
+    "file_name": "mk_MK",
+    "code": "mk"
+  },
+  {
+    "file_name": "mn_MN",
+    "code": "mn"
+  },
+  {
+    "file_name": "fa_IR",
+    "code": "fa"
+  },
+  {
+    "file_name": "pl_PL",
+    "code": "pl"
+  },
+  {
+    "file_name": "pt_AO",
+    "code": "pt"
+  },
+  {
+    "file_name": "pt_BR",
+    "code": "pt"
+  },
+  {
+    "file_name": "pt_PT",
+    "code": "pt"
+  },
+  {
+    "file_name": "ro_RO",
+    "code": "ro"
+  },
+  {
+    "file_name": "ru_RU",
+    "code": "ru"
+  },
+  {
+    "file_name": "sr_RS",
+    "code": "sr"
+  },
+  {
+    "file_name": "sr@latin",
+    "code": "sr"
+  },
+  {
+    "file_name": "sk_SK",
+    "code": "sk"
+  },
+  {
+    "file_name": "sl_SI",
+    "code": "sl"
+  },
+  {
+    "file_name": "es_AR",
+    "code": "es"
+  },
+  {
+    "file_name": "es_BO",
+    "code": "es"
+  },
+  {
+    "file_name": "es_CL",
+    "code": "es"
+  },
+  {
+    "file_name": "es_CO",
+    "code": "es"
+  },
+  {
+    "file_name": "es_CR",
+    "code": "es"
+  },
+  {
+    "file_name": "es_DO",
+    "code": "es"
+  },
+  {
+    "file_name": "es_EC",
+    "code": "es"
+  },
+  {
+    "file_name": "es_GT",
+    "code": "es"
+  },
+  {
+    "file_name": "es_MX",
+    "code": "es"
+  },
+  {
+    "file_name": "es_PA",
+    "code": "es"
+  },
+  {
+    "file_name": "es_PE",
+    "code": "es"
+  },
+  {
+    "file_name": "es_PY",
+    "code": "es"
+  },
+  {
+    "file_name": "es_UY",
+    "code": "es"
+  },
+  {
+    "file_name": "es_VE",
+    "code": "es"
+  },
+  {
+    "file_name": "es_ES",
+    "code": "es"
+  },
+  {
+    "file_name": "sv_SE",
+    "code": "sv"
+  },
+  {
+    "file_name": "te_IN",
+    "code": "tw"
+  },
+  {
+    "file_name": "th_TH",
+    "code": "th"
+  },
+  {
+    "file_name": "tr_TR",
+    "code": "tr"
+  },
+  {
+    "file_name": "uk_UA",
+    "code": "uk"
+  },
+  {
+    "file_name": "vi_VN",
+    "code": "vi"
+  }
+]

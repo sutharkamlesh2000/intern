@@ -1,0 +1,1 @@
+docker build . -t newomr:17.0

@@ -1,0 +1,1001 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version:Odoo Server 17.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date:2024-05-10 05:36+0000"
+"PO-Revision-Date:2024-05-10 05:36+0000"
+"Last-Translator:"
+"Language-Team:"
+"MIME-Version:1.0"
+"Content-Type:text/plain; charset=UTF-8"
+"Content-Transfer-Encoding:"
+"Plural-Forms:"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.student_report_action
+msgid "'Student Profile'"
+msgstr "'વિદ્યાર્થી પ્રોફાઇલ'"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.schools_report_action
+msgid "(object.name+'.pdf')"
+msgstr "(object.name+'.pdf')"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.school_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p t-field=\"object.name\">Dear <br> In your school, you have these courses. </p>\n"
+"                <table class=\"table table-striped\">\n"
+"                    <thead>\n"
+"                        <tr>\n"
+"                            <th class=\"text-center\">Sr no</th>\n"
+"                            <th class=\"text-center\">Course</th>\n"
+"                        </tr>\n"
+"                    </thead>\n"
+"                    <tbody>\n"
+"                        <t t-if=\"object.courses_ids\">\n"
+"                            <t t-set=\"i\" t-value=\"1\"></t>\n"
+"                            <t t-foreach=\"object.courses_ids\" t-as=\"course\">\n"
+"                                <tr>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"i\"></span>\n"
+"                                        <t t-set=\"i\" t-value=\"i+1\"></t>\n"
+"                                    </td>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"course.course_name\"></span>\n"
+"                                    </td>\n"
+"                                </tr>\n"
+"                            </t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <tr>\n"
+"                                <td class=\"text-center\" scope=\"row\">\n"
+"                                    No courses found\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </t>\n"
+"                    </tbody>\n"
+"                </table> \n"
+"                <br>\n"
+"                Congratulations on your school registration! Thankyou </div>\n"
+"            <div class=\"\">\n"
+"                <p> Test condition statement <p t-if=\"object.name == 'Mayur Public School'\">\n"
+"                        True\n"
+"                    </p>\n"
+"                    <p t-else=\"\">\n"
+"                        False\n"
+"                    </p>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p t-field=\"object.name\">પ્રિય <br> તમારી શાળામાં, તમારી પાસે આ અભ્યાસક્રમો છે. </p>\n"
+" <table class=\"ટેબલ ટેબલ-પટ્ટાવાળી\">\n"
+" <thead>\n"
+" <tr>\n"
+" <th class=\"text-center\">Sr no</th>\\ n <th class=\"text-center\">કોર્સ</th>\n"
+" </tr>\n"
+" </thead>\n"
+" <tbody>\n"
+" <t t-if=\"object.courses_ids\" >\n"
+" <t t-set=\"i\" t-value=\"1\"></t>\n"
+" <t t-foreach=\"object.courses_ids\" t-as=\"કોર્સ \">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" <span t-esc=\"i\"></span>\n"
+" < t t-set=\"i\" t-value=\"i+1\"></t>\n"
+" </td>\n"
+" <td class=\"text-center\" scope=\"પંક્તિ \">\n"
+" <span t-esc=\"course.course_name\"></span>\n"
+" </td>\n"
+" </tr>\n"
+" </t>\n"
+" </t>\n"
+" < t t-else=\"\">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" કોઈ અભ્યાસક્રમ મળ્યો નથી\n"
+" </td>\n"
+" < /tr>\n"
+" </t>\n"
+" </tbody>\n"
+" </table> \n"
+" <br>\n"
+" તમારી શાળાની નોંધણી બદલ અભિનંદન! આભાર </div>\n"
+" <div class=\"\">\n"
+" <p> ટેસ્ટ કન્ડિશન સ્ટેટમેન્ટ <p t-if=\"object.name == 'મયુર પબ્લિક સ્કૂલ'\">\n"
+" સાચું\n"
+" </p>\n"
+" <p t-else=\"\">\n"
+" ખોટું\n"
+" </p>\n"
+" </p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.student_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear <p t-field=\"object.name\"></p>\n"
+"                </p> Congratulations! Your\n"
+"                application has been selected. Thankyou <p t-esc=\"object.school_id.name\"></p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p>પ્રિય <p t-field=\"object.name\"></p>\n"
+" </p> અભિનંદન! તમારી\n"
+" અરજી પસંદ કરવામાં આવી છે. આભાર <p t-esc=\"object.school_id.name\"></p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Course</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>કોઈ કોર્સ નથી</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Faculty</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>કોઈ ફેકલ્ટી નથી</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Student</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>કોઈ વિદ્યાર્થી નથી</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction
+msgid "Action Needed"
+msgstr "ક્રિયા જરૂરી"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_ids
+msgid "Activities"
+msgstr "પ્રવૃત્તિઓ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "પ્રવૃત્તિ અપવાદ શણગાર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_state
+msgid "Activity State"
+msgstr "પ્રવૃત્તિ સ્થિતિ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "પ્રવૃત્તિ પ્રકાર આયકન"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__address
+msgid "Address"
+msgstr "સરનામું"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__age
+msgid "Age"
+msgstr "ઉંમર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__priority
+msgid "Appreciation"
+msgstr "પ્રશંસા"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__assigned_courses_id
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Assigned Courses"
+msgstr "અસાઇન કરેલ અભ્યાસક્રમો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_attachment_count
+msgid "Attachment Count"
+msgstr "જોડાણ ગણતરી"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__dob
+msgid "Birth Date"
+msgstr "જન્મતારીખ"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__cancel
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Cancel"
+msgstr "રદ કરો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__city
+#: model:ir.model.fields,field_description:employee_management.field_school_student__city
+msgid "City"
+msgstr "શહેર"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__confirm
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Confirm"
+msgstr "પુષ્ટિ કરો"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.school_mail_template
+msgid "Congratulations on your school registration!"
+msgstr "તમારી શાળાની નોંધણી બદલ અભિનંદન!"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.student_mail_template
+msgid "Congratulations! Your application has been selected."
+msgstr "અભિનંદન! તમારી અરજી પસંદ કરવામાં આવી છે."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__country
+#: model:ir.model.fields,field_description:employee_management.field_school_student__country
+msgid "Country"
+msgstr "દેશ"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_courses
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__course_name
+#: model:ir.ui.menu,name:employee_management.menu_courses
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Course"
+msgstr "અભ્યાસક્રમ"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.courses_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__courses_ids
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Courses"
+msgstr "અભ્યાસક્રમો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_date
+msgid "Created on"
+msgstr "ના રોજ બનાવ્યું"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__display_name
+msgid "Display Name"
+msgstr "ડિસ્પ્લે નામ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_profile
+msgid "Display profile"
+msgstr "ડિસ્પ્લે પ્રોફાઇલ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Doesn't have Linkedin profile"
+msgstr "Linkedin પ્રોફાઇલ નથી"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__draft
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+msgid "Draft"
+msgstr "ડ્રાફ્ટ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__email
+#: model:ir.model.fields,field_description:employee_management.field_school_student__email
+msgid "Email"
+msgstr "ઈમેલ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Enroll\n"
+"                                            In"
+msgstr ""
+"Enroll\n"
+"                                            In"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__enroll_course_id
+msgid "Enroll Course"
+msgstr "કોર્સ નોંધણી"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Enroll In"
+msgstr "માં નોંધણી કરો"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__3
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__3
+msgid "Excellent"
+msgstr "ઉત્તમ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__external_staff_ids
+msgid "External Staff"
+msgstr "બાહ્ય સ્ટાફ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculties"
+msgstr "ફેકલ્ટી"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.faculty_model_action
+#: model:ir.ui.menu,name:employee_management.menu_faculty
+msgid "Faculty"
+msgstr "ફેકલ્ટી"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_faculty
+msgid "Faculty "
+msgstr "ફેકલ્ટી"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_graph
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_pivot
+msgid "Faculty Analysis"
+msgstr "ફેકલ્ટી વિશ્લેષણ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_calendar
+msgid "Faculty Calendar"
+msgstr "ફેકલ્ટી કેલેન્ડર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__faculty_line
+msgid "Faculty Line"
+msgstr "ફેકલ્ટી લાઇન"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__faculty_name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculty Name"
+msgstr "ફેકલ્ટીનું નામ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__mother_name
+msgid "Father's name"
+msgstr "પિતાનું નામ"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__female
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__female
+msgid "Female"
+msgstr "સ્ત્રી"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_follower_ids
+msgid "Followers"
+msgstr "અનુયાયીઓ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "અનુયાયીઓ (ભાગીદારો)"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "ફોન્ટ અદ્ભુત આયકન દા.ત. એફએ-ટાસ્ક"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__parent_contect_number
+msgid "Gaudium number"
+msgstr "આનંદ નંબર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__gender
+#: model:ir.model.fields,field_description:employee_management.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Gender"
+msgstr "જાતિ"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__1
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__1
+msgid "Good"
+msgstr "સારું"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__has_message
+msgid "Has Message"
+msgstr "સંદેશ છે"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__height
+msgid "Height"
+msgstr "ઊંચાઈ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__id
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__id
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__id
+#: model:ir.model.fields,field_description:employee_management.field_school_student__id
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon"
+msgstr "ચિહ્ન"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "અપવાદ પ્રવૃત્તિ સૂચવવા માટેનું ચિહ્ન."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "જો ચકાસાયેલ હોય, તો નવા સંદેશાઓ માટે તમારું ધ્યાન જરૂરી છે."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "જો ચેક કરેલ હોય, તો કેટલાક સંદેશાઓમાં ડિલિવરી ભૂલ છે."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_is_follower
+msgid "Is Follower"
+msgstr "અનુયાયી છે"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__is_external_staff
+msgid "Is external"
+msgstr "બાહ્ય છે"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_1
+msgid "Jin school"
+msgstr "જિન શાળા"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__start_date
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Joining Date"
+msgstr "જોડાવાની તારીખ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "દ્વારા છેલ્લે અપડેટ કરવામાં આવ્યું હતું"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__end_date
+msgid "Last Working date"
+msgstr "કામ કરવાની છેલ્લી તારીખ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Linkedin"
+msgstr "લિંક્ડિન"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__logo
+msgid "Logo"
+msgstr "લોગો"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__male
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__male
+msgid "Male"
+msgstr "પુરુષ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_sale_order__manager_id
+msgid "Manager"
+msgstr "મેનેજર"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.action_mark_as_done
+msgid "Mark as Confirm"
+msgstr "પુષ્ટિ તરીકે ચિહ્નિત કરો"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_2
+msgid "Mayur Public School"
+msgstr "મયુર પબ્લિક સ્કૂલ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error
+msgid "Message Delivery error"
+msgstr "સંદેશ વિતરણ ભૂલ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_ids
+msgid "Messages"
+msgstr "સંદેશાઓ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__father_name
+msgid "Mother's name"
+msgstr "માતાનું નામ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "મારી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "Name"
+msgstr "નામ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__city
+msgid "New City"
+msgstr "નવું શહેર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__country
+msgid "New Country"
+msgstr "નવો દેશ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__states
+msgid "New States"
+msgstr "નવા રાજ્યો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__street
+msgid "New Street"
+msgstr "નવી સ્ટ્રીટ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__zip_code
+msgid "New Zip Code"
+msgstr "નવો પિન કોડ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Next"
+msgstr "આગળ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "આગલી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_summary
+msgid "Next Activity Summary"
+msgstr "આગામી પ્રવૃત્તિ સારાંશ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_id
+msgid "Next Activity Type"
+msgstr "આગામી પ્રવૃત્તિ પ્રકાર"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__0
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__0
+msgid "Normal"
+msgstr "સામાન્ય"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of Actions"
+msgstr "ક્રિયાઓની સંખ્યા"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of errors"
+msgstr "ભૂલોની સંખ્યા"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "ક્રિયાની જરૂર હોય તેવા સંદેશાઓની સંખ્યા"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "વિતરણ ભૂલ સાથે સંદેશાઓની સંખ્યા"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_city
+msgid "Old City"
+msgstr "જુનુ શહેર"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_country
+msgid "Old Country"
+msgstr "જૂનો દેશ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_states
+msgid "Old States"
+msgstr "જૂના રાજ્યો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_street
+msgid "Old Street"
+msgstr "ઓલ્ડ સ્ટ્રીટ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_zip_code
+msgid "Old Zip Code"
+msgstr "જૂનો પિન કોડ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__phone
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__phone
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_tree
+msgid "Phone"
+msgstr "ફોન"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "Print"
+msgstr "છાપો"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__private
+msgid "Private School"
+msgstr "ખાનગી શાળા"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Profile"
+msgstr "પ્રોફાઇલ"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__public
+msgid "Public School"
+msgstr "જાહેર શાળા"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__rank
+msgid "Rank"
+msgstr "ક્રમ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__rating
+msgid "Rating"
+msgstr "રેટિંગ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_user_id
+msgid "Responsible User"
+msgstr "જવાબદાર વપરાશકર્તા"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Roll\n"
+"                                            no"
+msgstr ""
+"Roll\n"
+"                                            no"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__roll_no
+msgid "Roll No."
+msgstr "રોલ નં."
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Roll no"
+msgstr "રોલ નં"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_3
+msgid "SDA Public School"
+msgstr "એસડીએ પબ્લિક સ્કૂલ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS વિતરણ ભૂલ"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_sale_order
+msgid "Sales Order"
+msgstr "વેચાણ ઓર્ડર"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.schools_report_action
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__school_id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_student__school_id
+#: model:ir.ui.menu,name:employee_management.menu_school_profile
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "School"
+msgstr "શાળા"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.school_mail_template
+msgid "School Email Template"
+msgstr "શાળા ઇમેઇલ નમૂનો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__s_id
+msgid "School ID"
+msgstr "શાળા ID"
+
+#. module: employee_management
+#: model:ir.ui.menu,name:employee_management.menu_schoool_management_root
+msgid "School Management"
+msgstr "શાળા સંચાલન"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_profile_model_action
+#: model:ir.model,name:employee_management.model_school_profile
+msgid "School Profile"
+msgstr "શાળા પ્રોફાઇલ"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_wizard_action
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "School Wizard"
+msgstr "શાળા વિઝાર્ડ"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_profile_update_wizard
+msgid "School wizard"
+msgstr "શાળા વિઝાર્ડ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail"
+msgstr "સંદેશો મોકલો"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail with compose"
+msgstr "કંપોઝ સાથે મેઇલ મોકલો"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Sr no"
+msgstr "ક્રમ નં"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__states
+#: model:ir.model.fields,field_description:employee_management.field_school_student__states
+msgid "State"
+msgstr "રાજ્ય"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__state
+msgid "Status"
+msgstr "સ્થિતિ"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"પ્રવૃતિઓ પર આધારિત સ્થિતિ\n"
+"ઓવરડ્યુ: નિયત તારીખ પહેલેથી જ પસાર થઈ ગઈ છે\n"
+"આજે: પ્રવૃત્તિની તારીખ આજની છે\n"
+"આયોજિત: ભાવિ પ્રવૃત્તિઓ."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__step
+msgid "Step"
+msgstr "પગલું"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__street
+#: model:ir.model.fields,field_description:employee_management.field_school_student__street
+msgid "Street"
+msgstr "શેરી"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_student__name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__student_ids
+#: model:ir.ui.menu,name:employee_management.menu_student
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.ir_cron_school_student_send_ir_actions_server
+msgid "Student "
+msgstr "વિદ્યાર્થી"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_student_update_wizard
+msgid "Student Address wizard"
+msgstr "વિદ્યાર્થી સરનામું વિઝાર્ડ"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.student_mail_template
+msgid "Student Email Template"
+msgstr "વિદ્યાર્થી ઈમેઈલ નમૂનો"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__student_line
+msgid "Student Line"
+msgstr "વિદ્યાર્થી રેખા"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student New Address"
+msgstr "વિદ્યાર્થી નવું સરનામું"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student Old Address"
+msgstr "વિદ્યાર્થી જૂનું સરનામું"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.student_report_action
+msgid "Student Profile"
+msgstr "વિદ્યાર્થી પ્રોફાઇલ"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_wizard_action
+msgid "Student Update Wizard"
+msgstr "વિદ્યાર્થી અપડેટ વિઝાર્ડ"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_address
+msgid "Student address"
+msgstr "વિદ્યાર્થીનું સરનામું"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_student
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__total_faculty
+msgid "Total Faculty"
+msgstr "કુલ ફેકલ્ટી"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total course"
+msgstr "કુલ અભ્યાસક્રમ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total faculty"
+msgstr "કુલ ફેકલ્ટી"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__school_type
+msgid "Type of School "
+msgstr "શાળાનો પ્રકાર"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "રેકોર્ડ પર અપવાદ પ્રવૃત્તિનો પ્રકાર."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__user_ids
+msgid "User"
+msgstr "વપરાશકર્તા"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__2
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__2
+msgid "Very Good"
+msgstr "વેરી ગુડ"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_4
+msgid "Vijay International School"
+msgstr "વિજય ઇન્ટરનેશનલ સ્કૂલ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__website_message_ids
+msgid "Website Messages"
+msgstr "વેબસાઇટ સંદેશાઓ"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__website_message_ids
+msgid "Website communication history"
+msgstr "વેબસાઇટ સંચાર ઇતિહાસ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__zip_code
+#: model:ir.model.fields,field_description:employee_management.field_school_student__zip_code
+msgid "Zip Code"
+msgstr "પિન કોડ"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__linkedin_url
+msgid "`Linkedin url`"
+msgstr "'લિંકડિન url'"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "barcode"
+msgstr "બારકોડ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "course"
+msgstr "અભ્યાસક્રમ"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "dp"
+msgstr "ડીપી"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "faculty"
+msgstr "ફેકલ્ટી"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.weblearns_layout
+msgid "logo"
+msgstr "લોગો"
+

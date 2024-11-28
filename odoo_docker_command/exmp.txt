@@ -1,0 +1,432 @@
+WebLearns --> youtube.com
+ip addr
+
+
+Whenever you create new folder for modul(project) then fire this command. this command used for give access like:-(read,write,delete)
+>>>>>>>chmod 777 filestore/ 
+chmod 777 filestore/ -R
+
+------------------------------------------------
+
+>> docker ps     --> "To see all running container ""
+
+docker stop <put_container_ID>  --> "For stop container"
+docker rm <put_container_ID>  --> "For remove container"
+
+
+
+
+docker container ls -->"To see all containers"
+docker exec -it dbpg13 dropdb test_db --username=erp --> drop database 
+                    ^             ^               ^
+               postgres image   database
+
+ docker exec -it <container name> bash
+ example -->  docker exec -it dbpd13 bash
+
+ Also you can you container_id instead of container name
+ like -->  docker exec -it container_name_or_id bash
+
+
+After that fire this command --> psql -U <username> -d <database_name>
+
+like --> psql -U erp -d test_demo_db
+
+While writting sql query do not forget ';' semicolon
+
+After that fre this command to see table schema --> \d school_student; "school_student is table name"
+
+
+
+****************************
+If you want to remove _sql_constraint (database level)
+ _sql_constraints = [
+        ('name_uniq', 'unique (name)','This school name is already taken please use different name..!'),
+    ]
+
+--> alter table school_profile drop constraint school_profile_name_uniq;
+
+                    ^                                   ^
+                table name                      table name + "name_uniq"
+
+
+****************************
+
+------------------------------------------------
+
+sudo apt-get install docker docker.io
+sudo usermod -aG docker $USER
+sudo groupadd docker
+
+'first run this three command in terminal and restart the system'
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+	
+pre-requisite folder
+1) addons
+2) conf - > odoo.conf (Plain text file)
+3)docker -> Dockerfile (Plain text file)
+4)filestore
+-------------------------------------------------------------------------------------------------------------------------------------------------
+step 1 :-  docker restart dbpg13  'dbpg13 is a database'
+
+
+docker run -v /home/erp/workspace/pg13_data:/var/lib/postgresql/data -d -e POSTGRES_USER=erp -e POSTGRES_PASSWORD=erp --name dbpg13 postgres:13.0
+
+This command run when you use first time odoo / after formating your system
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+---------> odoo.conf <you can change the file according to project like shop.conf etc>
+
+[options]
+addons_path = /opt/odoo/server/odoo/addons,/opt/odoo/server/addons
+                    ^           ^                  ^
+                    This is image name that we are using 'oecinternal/odoo:17.0' image
+data_dir = /var/lib/odoo
+                      ^
+                      This one also
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+---------> Dockerfile
+
+
+FROM oecinternal/odoo:17.0   
+                ^
+                This is a actual image name           
+USER root 
+RUN pip3 install --upgrade pip
+
+
+--> open terminal from Dockerfile desk and fire this command
+
+docker build . -t test_run   "Now we are creating a reflected image of 'oecinternal/odoo:17.0' image.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+AND FINALLY RUN THIS COMMAND(don't forget to check you folder root )
+
+
+ docker run --rm -v /home/erp/workspace/test_demo1/addons:/mnt/extra-addons -v /home/erp/workspace/test_demo1/conf:/etc/odoo/ -v /home/erp/workspace/test_demo1/filestore/:/var/lib/odoo -p 8055:8069 --name odoo_project --link dbpg13:db -t test_demo1 -d test_demo_db -u employee_management
+
+
+ docker run --rm -v /home/erp/workspace/openEducat-18/addons:/mnt/extra-addons -v /home/erp/workspace/openEducat-18/conf:/etc/odoo/ -v /home/erp/workspace/openEducat-18/filestore/:/var/lib/odoo -p 8069:8069 --name oec_migration --link dbpg13:db -t oecinternal/odoo:18.0 -d openeducat_db1 -i openeducat_core
+
+
+docker run --rm -v /home/erp/workspace/test_demo1/addons:/mnt/extra-addons -v /home/erp/workspace/test_demo1/conf:/etc/odoo/ -v /home/erp/workspace/test_demo1/filestore/:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d test_demo_db4 -u employee_management --dev=all
+
+
+docker run --rm -v /home/erp/workspace/project/addons:/mnt/extra-addons -v /home/erp/workspace/project/conf:/etc/odoo/ -v /home/erp/workspace/project/filestore/:/var/lib/odoo -p 8055:8069 --name odoo_project --link dbpg13:db -t oecinternal/odoo:17.0  -d test_db -i base
+
+
+---------------OR---------------
+
+docker run --rm -v /home/erp/workspace/demo/addons:/mnt/extra-addons -v /home/erp/workspace/demo/conf:/etc/odoo/ -v /home/erp/workspace/demo/filestore/:/var/lib/odoo -p 8055:8069 --name odoo_project --link dbpg13:db -t test_demo -d test_db -u school_management
+
+
+
+Explanation:-
+
+--rm "using this we can use container like an object so easily automatic delete container after disconnect the server"
+"/home/erp/workspace/project/addons" --> this is your local folder root
+"/mnt/extra-addons -v" --> this is vertual root of the odoo
+"/home/erp/workspace/project/conf:" --> this is also your local folder root
+"/var/lib/odoo" --> make sure relace 'odoo' with your image that is in used
+"-p 8055:8069 " --> -p means port and 8055 is custom port and 8069 is odoo default port
+"-d test_db" --> -d means database and test_db is a database name
+
+"-u school_management" --> using this we can get security code like /also using this we can update the module 'id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+school_management.access_school_management_system,access_school_management_system,school_management.model_school_management_system,base.group_user,1,0,0,0 '   for security reason
+
+
+
+
+docker run --rm -v /home/erp/workspace/test_demo1/addons:/mnt/extra-addons -v /home/erp/workspace/test_demo1/conf:/etc/odoo/ -v /home/erp/workspace/test_demo1/filestore/:/var/lib/odoo -p 8055:8069 --name odoo_project --link dbpg13:db -t test_demo1 -d test_demo_db -u employee_management
+
+
+
+docker run --rm -v /home/erp/workspace/hm/addons:/mnt/extra-addons -v /home/erp/workspace/hm/conf:/etc/odoo/ -v /home/erp/workspace/hm/filestore/:/var/lib/odoo -p 8069:8069 --name odoo_project --link dbpg13:db -t test_demo1 -d zydus_db -i zydus
+
+docker run --rm -v /home/erp/workspace/hm/addons:/mnt/extra-addons -v /home/erp/workspace/hm/conf:/etc/odoo/ -v /home/erp/workspace/hm/filestore/:/var/lib/odoo -p 8055:8069 --name odoo_project --link dbpg13:db -t test_demo1 -d zydus_db1 -i hospital_management --without-demo=all
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+erp@erp:~/workspace/test_demo1$ docker exec -it dbpg13 bash
+
+root@aa4225d315b0:/# psql test_demo_db -U 
+
+/usr/lib/postgresql/13/bin/psql: option requires an argument -- 'U'
+Try "psql --help" for more information.
+
+root@aa4225d315b0:/# psql test_demo_db -U erp
+
+psql (13.14 (Debian 13.14-1.pgdg120+2))
+
+Type "help" for help.
+
+test_demo_db=# 
+
+*********************************************************************
+
+In res.users model mostly groups are there like "User Type, Sales, Accounting" etc If you wanna to do somthing with these field first you need to know these "XML ID:". for that you can go like: -  settings-> Users & Companies (debug mode on) -> Groups and then search like: Internal user select
+
+*********************************************************************
+
+
+
+
+ 
+
+
+
+
+
+selected name when any view open for smart button then want ot create new record
+
+
+    def get_student(self):
+        action = self.env.ref('openeducat_core.'
+                              'act_open_op_student_course_view').read()[0]
+        action['domain'] = [('student_id', 'in', [self.id])]
+        action['context'] = {'default_student_id': self.id, 'default_student_name': self.name}
+        return action
+
+If you want to disable/hide create or new button if you come from smart button then you need to add "create = false" in context" ** NEED TO RESEARCH ABOUT THE **
+
+
+
+
+
+
+
+ubuyanshiki100@yopmail.com
+
+
+
+
+
+
+
+
+
+
+    <!-- <template id="student_acceptance_form_header">
+        <div class="header">
+            <div align="center" style="min-width: 590px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px;
+    border-collapse:separate;">
+                    <tr>
+                        <td valign="middle" align="left">
+                            <img src="/customer_geneva/static/src/img/logo.png" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="article" t-att-data-oe-model="doc and doc._name"
+            t-att-data-oe-id="doc and doc.id"
+            t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-raw="0" />
+        </div>
+    </template> -->
+
+
+
+
+
+
+
+<img id="finput" height="100" width="100" t-attf-src="/web/content/op.admission/#{application_data.id}/image"/>
+
+
+
+
+ acceptance_data = {
+            'application_id': application_data.id,
+            'passport_photo': base64.encodebytes(
+                urlopen(post.get('passport_photo')).read()) if post.get(
+                'passport_photo') else None,
+            'family_name': post.get('family_name') if post.get('family_name') else None,
+            'email': post.get('email') if post.get('email') else None,
+            'first_name': post.get('first_name') if post.get('first_name') else None,
+            'student_guardian_signature': base64.encodebytes(
+                urlopen(post.get('student_guardian_signature')).read()) if post.get(
+                'student_guardian_signature') else None,
+            'student_signature': base64.encodebytes(
+                urlopen(post.get('student_signature')).read()) if post.get(
+                'student_signature') else None,
+            'parent_guardian_signature': base64.encodebytes(
+                urlopen(post.get('parent_guardian_signature')).read()) if post.get(
+                'parent_guardian_signature') else None,
+        }
+
+
+
+
+fork in github
+
+step.1 = fork github repo
+step.2 = 1.git clone git repo url 
+         2.cd folder
+         3.git remote -v
+         4.git remote add poojan githut_url (You can create a remote with your name)
+         5.git remote -v
+         6.git remote update
+         7.git checkout -b <your_branch_name>
+         8.git pull <remote_name> <wanted_branch_name>
+       9.git status         
+        10.git add .
+        11.git commit
+        12.git push origin <your_branch_name>  (Always push the origin code into your own branch, then request a merger into <17.0-poojan-test-trainees>)
+        13.merge with poojan_repo
+
+
+
+---BEFORE CREATE A PULL REQUEST, YOU MUST CROSS-CHECK---
+       
+poojan-21/openeducat_erp --- 17.0-poojan-test-trainees <--- sutharkamlesh1810/openeducat_erp ---- <select your branch>
+
+
+
+
+
+
+
+customer_ime.access_previous_education_result,access_previous_education_result,customer_ime.model_previous_education_result,base.group_user,1,1,1,1
+
+
+
+customer_ime.access_previous_education_year_awarded_line,access_previous_education_year_awarded_line,customer_ime.model_previous_education_year_awarded_line,base.group_user,1,1,1,1
+
+
+customer_ime.access_previous_education_result_line,access_previous_education_result_line,customer_ime.model_previous_education_result_line,base.group_user,1,1,1,1
+docker run --rm -v /home/erp/workspace/openeducat-docker/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat-docker/conf:/etc/odoo/ -v /home/erp/workspace/openeducat-docker/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d oec_db -i base
+
+docker run --rm -v /home/erp/workspace/openeducat-docker/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat-docker/conf:/etc/odoo/ -v /home/erp/workspace/openeducat-docker/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d oec_db -i base
+
+docker run --rm -v /home/erp/workspace/openeducat-docker/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat-docker/conf:/etc/odoo/ -v /home/erp/workspace/openeducat-docker/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d oec_db -i openeducat_core_enterprise --test-enable --stop-after-init
+
+
+
+docker run --rm -v /home/erp/workspace/openeducat_16/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat_16/conf:/etc/odoo/ -v /home/erp/workspace/openeducat_16/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:16.0 -d cg_db1 -i customer_geneva
+
+
+docker run --rm -v /home/erp/workspace/openeducat_16/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat_16/conf:/etc/odoo/ -v /home/erp/workspace/openeducat_16/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t geneva:16.0 -d cg_db1 -i customer_geneva
+
+
+docker run --rm -v /home/erp/workspace/customer-geneva/addons:/mnt/extra-addons -v /home/erp/workspace/customer-geneva/conf:/etc/odoo/ -v /home/erp/workspace/customer-geneva/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t geneva:16.0 -d customer_geneva_db1 -u customer_geneva
+
+
+docker run --rm -v /home/erp/workspace/customer-alshayeb/addons:/mnt/extra-addons -v /home/erp/workspace/customer-alshayeb/conf:/etc/odoo/ -v /home/erp/workspace/customer-alshayeb/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d customer_al_db -i customer_alshayeb
+
+docker run --rm -v /home/erp/workspace/college-global/addons:/mnt/extra-addons -v /home/erp/workspace/college-global/conf:/etc/odoo/ -v /home/erp/workspace/college-global/filestore:/var/lib/odoo -p 8069:8069 --name global_college --link dbpg13:db -t oecinternal/odoo:17.0 -d college_db -i customer_global_college
+
+
+
+docker run --rm -v /home/erp/workspace/customer-alshayeb/addons:/mnt/extra-addons -v /home/erp/workspace/customer-alshayeb/conf:/etc/odoo/ -v /home/erp/workspace/customer-alshayeb/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d customer_al_db2 -u customer_alshayeb
+
+
+docker run --rm -v /home/erp/workspace/customer-YYO/addons:/mnt/extra-addons -v /home/erp/workspace/customer-YYO/conf:/etc/odoo/ -v /home/erp/workspace/customer-YYO/filestore:/var/lib/odoo -p 8069:8069 --name customer_yyo --link dbpg13:db -t oecinternal/odoo:17.0 -d customer_yyo_db8 -i customer_yyo
+
+docker run --rm -v /home/erp/workspace/customer-ime/addons:/mnt/extra-addons -v /home/erp/workspace/customer-ime/conf:/etc/odoo/ -v /home/erp/workspace/customer-ime/filestore:/var/lib/odoo -p 8069:8069 --name customer_ime --link dbpg13:db -t oecinternal/odoo:17.0 -d customer_ime_db1 -i customer_ime
+
+
+docker run --rm -v /home/erp/workspace/openeducat-docker/addons:/mnt/extra-addons -v /home/erp/workspace/openeducat-docker/conf:/etc/odoo/ -v /home/erp/workspace/openeducat-docker/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t oecinternal/odoo:17.0 -d oec_db33 -u helpdesk_basic
+
+docker run --rm -v /home/erp/workspace/industry-docker/3.0/addons:/mnt/extra-addons -v /home/erp/workspace/industry-docker/3.0/conf:/etc/flectra/ -v /home/erp/workspace/industry-docker/3.0/filestore:/var/lib/flectra -p 7073:7073 --name industry_f3 --link dbpg13:db -t flectrahq/flectra:3.0 -d f3_db_1 -i
+
+docker run --rm -v /home/erp/workspace/industry-docker/17.0/addons:/mnt/extra-addons -v /home/erp/workspace/industry-docker/17.0/conf:/etc/odoo -v /home/erp/workspace/industry-docker/17.0/filestore:/var/lib/odoo -v /home/erp/workspace/industry-docker/17.0_enterprise/odoo:/opt/odoo/server -p 8069:8069 --name industry_odoo --link dbpg13:db -t oecinternal/odoo:17.0 -d odoo_17_db_2 -i agriculture_shop
+
+
+docker run --rm -v /home/erp/workspace/industry-docker/17.0/addons:/mnt/extra-addons -v /home/erp/workspace/industry-docker/17.0/conf:/etc/odoo -v /home/erp/workspace/industry-docker/17.0/filestore:/var/lib/odoo -v /home/erp/workspace/odoo-default/ODOO_17.0ENT:/opt/odoo/server -p 8069:8069 --name industry_odoo --link dbpg13:db -t oecinternal/odoo:17.0 -d odoo_17_ent_3 -i base
+
+
+
+docker run --rm -v /home/erp/workspace/customer-geneva/addons:/mnt/extra-addons -v /home/erp/workspace/customer-geneva/conf:/etc/odoo/ -v /home/erp/workspace/customer-geneva/filestore:/var/lib/odoo -p 8069:8069 --name oec_test --link dbpg13:db -t geneva:16.0 -d customer_geneva_db12 -u customer_geneva --dev=all
+
+
+customer_yyo_db1 -->  for dynamic admission form 
+customer_yyo_db2 --> for controller
+
+f3_agriculture_db_20
+
+
+You can pass domain in stage_id field like this:-
+
+    @api.onchange('team_id')
+    def onchange_team_id(self):
+        self.user_id = False
+        if self.team_id:
+            self.stage_id = \
+                self.team_id.stage_ids and self.team_id.stage_ids.ids[0]
+            print("======hshusdhus", [('id', 'in', self.team_id.stage_ids.ids)])
+            return {"domain": {'stage_id': [('id', 'in', self.team_id.stage_ids.ids)]}}
+
+
+
+
+        wizard_action = {
+            'type':'ir.actions.act_window',
+            'name':'',
+            'view_mode':'form',
+            'res_model':'op.student.course',
+            'rec_id':False,
+            'target':'new',
+            'context':{'default_student_ids':}
+        }
+
+         # return {
+        #     'type': 'ir.actions.client',
+        #     'tag': 'reload',
+        # }
+
+
+
+    domain="[('course_id','=',course_id)
+
+
+       <group expand="1" string="Group By">
+                    <filter string="Course" domain="[]" name="group_by_course_id" context="{'group_by': 'course_id'}" />
+                </group>
+
+
+
+
+
+
+
+
+
+
+
+                   <!-- <field name="course_id"/> -->
+                <!-- <group expand="0" string="Group By...">
+                        <filter string="Course" name="course_id" domain="[]" context="{'group_by':'course_id'}"/>
+                        <filter string="Course" domain="[]" name="course_id" context="{'group_by':'course_id'}"/>
+                </group> -->
+
+
+
+
+
+
+
+
+                docker run --rm -v /home/erp/workspace/industry-docker/17.0/addons:/mnt/extra-addons -v /home/erp/workspace/industry-docker/17.0/conf:/etc/odoo -v /home/erp/workspace/industry-docker/17.0/filestore:/var/lib/odoo -v /home/erp/workspace/odoo-default/ODOO_17.0ENT:/opt/odoo/server -p 8069:8069 --name industry_odoo --link dbpg13:db -t oecinternal/odoo:17.0 -d odoo_17_ent_4 -i construction
+
+
+FROM oecinternal/odoo:16.0
+RUN pip3 install --upgrade pip
+RUN pip3 install PyPDF2==2.12.1
+
+
+python3 -m pylint --rcfile=/home/erp/workspace/openeducat-docker/cfg_run_pylint.cfg /home/erp/workspace/openeducat-docker/addons/openeducat-enterprise/openeducat_dynamic_admission*
+
+
+flake8 --config=/home/erp/workspace/openeducat-docker/cfg_run_flake8.cfg /home/erp/workspace/openeducat-docker/addons/openeducat-enterprise/openeducat_dynamic_admission* --count   
+
+

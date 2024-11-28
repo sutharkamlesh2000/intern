@@ -1,0 +1,1001 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version:Odoo Server 17.0"
+"Report-Msgid-Bugs-To:"
+"POT-Creation-Date:2024-05-10 05:36+0000"
+"PO-Revision-Date:2024-05-10 05:36+0000"
+"Last-Translator:"
+"Language-Team:"
+"MIME-Version:1.0"
+"Content-Type:text/plain; charset=UTF-8"
+"Content-Transfer-Encoding:"
+"Plural-Forms:"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.student_report_action
+msgid "'Student Profile'"
+msgstr "'Studentenprofiel'"
+
+#. module: employee_management
+#: model:ir.actions.report,print_report_name:employee_management.schools_report_action
+msgid "(object.name+'.pdf')"
+msgstr "(object.naam+'.pdf')"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.school_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p t-field=\"object.name\">Dear <br> In your school, you have these courses. </p>\n"
+"                <table class=\"table table-striped\">\n"
+"                    <thead>\n"
+"                        <tr>\n"
+"                            <th class=\"text-center\">Sr no</th>\n"
+"                            <th class=\"text-center\">Course</th>\n"
+"                        </tr>\n"
+"                    </thead>\n"
+"                    <tbody>\n"
+"                        <t t-if=\"object.courses_ids\">\n"
+"                            <t t-set=\"i\" t-value=\"1\"></t>\n"
+"                            <t t-foreach=\"object.courses_ids\" t-as=\"course\">\n"
+"                                <tr>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"i\"></span>\n"
+"                                        <t t-set=\"i\" t-value=\"i+1\"></t>\n"
+"                                    </td>\n"
+"                                    <td class=\"text-center\" scope=\"row\">\n"
+"                                        <span t-esc=\"course.course_name\"></span>\n"
+"                                    </td>\n"
+"                                </tr>\n"
+"                            </t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <tr>\n"
+"                                <td class=\"text-center\" scope=\"row\">\n"
+"                                    No courses found\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </t>\n"
+"                    </tbody>\n"
+"                </table> \n"
+"                <br>\n"
+"                Congratulations on your school registration! Thankyou </div>\n"
+"            <div class=\"\">\n"
+"                <p> Test condition statement <p t-if=\"object.name == 'Mayur Public School'\">\n"
+"                        True\n"
+"                    </p>\n"
+"                    <p t-else=\"\">\n"
+"                        False\n"
+"                    </p>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p t-field=\"object.name\">Beste <br> Op jouw school heb je deze cursussen. </p>\n"
+" <table class=\"table table-striped\">\n"
+" <thead>\n"
+" <tr>\n"
+" <th class=\"text-center\">Sr nee</th>\\ n <th class=\"text-center\">Cursus</th>\n"
+" </tr>\n"
+" </thead>\n"
+" <tbody>\n"
+" <t t-if=\"object.courses_ids\" >\n"
+" <t t-set=\"i\" t-value=\"1\"></t>\n"
+" <t t-foreach=\"object.courses_ids\" t-as=\"cursus \">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" <span t-esc=\"i\"></span>\n"
+" < t t-set=\"i\" t-value=\"i+1\"></t>\n"
+" </td>\n"
+" <td class=\"text-center\" scope=\"rij \">\n"
+" <span t-esc=\"cursus.cursusnaam\"></span>\n"
+" </td>\n"
+" </tr>\n"
+" </t>\n"
+" </t>\n"
+" < t t-else=\"\">\n"
+" <tr>\n"
+" <td class=\"text-center\" scope=\"row\">\n"
+" Geen cursussen gevonden\n"
+" </td>\n"
+" < /tr>\n"
+" </t>\n"
+" </tbody>\n"
+" </table> \n"
+" <br>\n"
+" Gefeliciteerd met je schoolregistratie! Bedankt </div>\n"
+" <div class=\"\">\n"
+" <p> Testvoorwaardeverklaring <p t-if=\"object.name == 'Mayur Public School'\">\n"
+" Waar\n"
+" </p>\n"
+" <p t-else=\"\">\n"
+" Onwaar\n"
+" </p>\n"
+" </p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model:mail.template,body_html:employee_management.student_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear <p t-field=\"object.name\"></p>\n"
+"                </p> Congratulations! Your\n"
+"                application has been selected. Thankyou <p t-esc=\"object.school_id.name\"></p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p>Beste <p t-field=\"object.name\"></p>\n"
+" </p> Gefeliciteerd! Uw\n"
+" applicatie is geselecteerd. Bedankt <p t-esc=\"object.school_id.name\"></p>\n"
+" </div>\n"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Course</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Geen cursus</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Faculty</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Geen faculteit</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid ""
+"<span>\n"
+"                                            <i>No Student</i>\n"
+"                                        </span>"
+msgstr ""
+"<span>\n"
+" <i>Geen leerling</i>\n"
+" </span>"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction
+msgid "Action Needed"
+msgstr "Actie nodig"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activiteit Uitzondering Decoratie"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_state
+msgid "Activity State"
+msgstr "Activiteitsstatus"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Pictogram voor activiteitstype"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__address
+msgid "Address"
+msgstr "Adres"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__age
+msgid "Age"
+msgstr "Leeftijd"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__priority
+msgid "Appreciation"
+msgstr "Waardering"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__assigned_courses_id
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Assigned Courses"
+msgstr "Toegewezen cursussen"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal bijlagen"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__dob
+msgid "Birth Date"
+msgstr "Geboortedatum"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__cancel
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__city
+#: model:ir.model.fields,field_description:employee_management.field_school_student__city
+msgid "City"
+msgstr "Stad"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__confirm
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.school_mail_template
+msgid "Congratulations on your school registration!"
+msgstr "Gefeliciteerd met je schoolinschrijving!"
+
+#. module: employee_management
+#: model:mail.template,subject:employee_management.student_mail_template
+msgid "Congratulations! Your application has been selected."
+msgstr "Gefeliciteerd! Uw toepassing is geselecteerd."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__country
+#: model:ir.model.fields,field_description:employee_management.field_school_student__country
+msgid "Country"
+msgstr "Land"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_courses
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__course_name
+#: model:ir.ui.menu,name:employee_management.menu_courses
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Course"
+msgstr "Cursus"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.courses_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__courses_ids
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Courses"
+msgstr "Cursussen"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__create_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__display_name
+#: model:ir.model.fields,field_description:employee_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__display_profile
+msgid "Display profile"
+msgstr "Profiel weergeven"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Doesn't have Linkedin profile"
+msgstr "Heeft geen Linkedin-profiel"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__state__draft
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_student_form
+msgid "Draft"
+msgstr "Voorlopige versie"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__email
+#: model:ir.model.fields,field_description:employee_management.field_school_student__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Enroll\n"
+"                                            In"
+msgstr ""
+"Enroll\n"
+"                                            In"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__enroll_course_id
+msgid "Enroll Course"
+msgstr "Cursus inschrijven"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Enroll In"
+msgstr "Schrijf je in"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__3
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__3
+msgid "Excellent"
+msgstr "Uitstekend"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__external_staff_ids
+msgid "External Staff"
+msgstr "Extern personeel"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculties"
+msgstr "Faculteiten"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.faculty_model_action
+#: model:ir.ui.menu,name:employee_management.menu_faculty
+msgid "Faculty"
+msgstr "Faculteit"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_faculty
+msgid "Faculty "
+msgstr "Faculteit"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_graph
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_pivot
+msgid "Faculty Analysis"
+msgstr "Facultaire analyse"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_calendar
+msgid "Faculty Calendar"
+msgstr "Facultaire Kalender"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__faculty_line
+msgid "Faculty Line"
+msgstr "Faculteitslijn"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__faculty_name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Faculty Name"
+msgstr "Faculteitnaam"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__mother_name
+msgid "Father's name"
+msgstr "Naam van de vader"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__female
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__female
+msgid "Female"
+msgstr "Vrouwelijk"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (partners)"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Lettertype geweldig pictogram, b.v. fa-taken"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__parent_contect_number
+msgid "Gaudium number"
+msgstr "Vreugde nummer"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__gender
+#: model:ir.model.fields,field_description:employee_management.field_school_student__gender
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Gender"
+msgstr "Geslacht"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__1
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__1
+msgid "Good"
+msgstr "Goed"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__has_message
+msgid "Has Message"
+msgstr "Heeft bericht"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__height
+msgid "Height"
+msgstr "Hoogte"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__id
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__id
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__id
+#: model:ir.model.fields,field_description:employee_management.field_school_student__id
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon"
+msgstr "Icoon"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Pictogram om een ​​uitzonderingsactiviteit aan te geven."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt, vereisen nieuwe berichten uw aandacht."
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt, hebben sommige berichten een bezorgfout."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_is_follower
+msgid "Is Follower"
+msgstr "Is volger"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__is_external_staff
+msgid "Is external"
+msgstr "Is extern"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_1
+msgid "Jin school"
+msgstr "Jin-school"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__start_date
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Joining Date"
+msgstr "Datum van toetreding"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__write_date
+#: model:ir.model.fields,field_description:employee_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__end_date
+msgid "Last Working date"
+msgstr "Laatste werkdag"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__logo
+msgid "Logo"
+msgstr "Logo"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__gender__male
+#: model:ir.model.fields.selection,name:employee_management.selection__school_student__gender__male
+msgid "Male"
+msgstr "Mannelijk"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_sale_order__manager_id
+msgid "Manager"
+msgstr "Manager"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.action_mark_as_done
+msgid "Mark as Confirm"
+msgstr "Markeer als Bevestig"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_2
+msgid "Mayur Public School"
+msgstr "Mayur openbare school"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error
+msgid "Message Delivery error"
+msgstr "Berichtbezorgingsfout"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__father_name
+msgid "Mother's name"
+msgstr "Moeders naam"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn activiteitsdeadline"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__name
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "Name"
+msgstr "Naam"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__city
+msgid "New City"
+msgstr "Nieuwe stad"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__country
+msgid "New Country"
+msgstr "Nieuw Land"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__states
+msgid "New States"
+msgstr "Nieuwe Staten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__street
+msgid "New Street"
+msgstr "Nieuwe straat"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__zip_code
+msgid "New Zip Code"
+msgstr "Nieuwe postcode"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Next"
+msgstr "Volgende"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Deadline volgende activiteit"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_summary
+msgid "Next Activity Summary"
+msgstr "Samenvatting van volgende activiteit"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_type_id
+msgid "Next Activity Type"
+msgstr "Volgende activiteitstype"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__0
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__0
+msgid "Normal"
+msgstr "Normaal"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal fouten"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Aantal berichten waarvoor actie vereist is"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met bezorgfout"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_city
+msgid "Old City"
+msgstr "Oude stad"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_country
+msgid "Old Country"
+msgstr "Oud land"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_states
+msgid "Old States"
+msgstr "Oude Staten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_street
+msgid "Old Street"
+msgstr "Oude straat"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__old_zip_code
+msgid "Old Zip Code"
+msgstr "Oude postcode"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__phone
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__phone
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_faculty_tree
+msgid "Phone"
+msgstr "Telefoon"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "Print"
+msgstr "Afdrukken"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__private
+msgid "Private School"
+msgstr "Prive school"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Profile"
+msgstr "Profiel"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__school_type__public
+msgid "Public School"
+msgstr "Openbare school"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__rank
+msgid "Rank"
+msgstr "Rang"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__rating
+msgid "Rating"
+msgstr "Beoordeling"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke gebruiker"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid ""
+"Roll\n"
+"                                            no"
+msgstr ""
+"Roll\n"
+"                                            no"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__roll_no
+msgid "Roll No."
+msgstr "Rol nr."
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Roll no"
+msgstr "Rol nr"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_3
+msgid "SDA Public School"
+msgstr "SDA-openbare school"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-bezorgfout"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_sale_order
+msgid "Sales Order"
+msgstr "Verkooporder"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.schools_report_action
+#: model:ir.model.fields,field_description:employee_management.field_school_courses__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__school_id
+#: model:ir.model.fields,field_description:employee_management.field_school_profile_update_wizard__school_ids
+#: model:ir.model.fields,field_description:employee_management.field_school_student__school_id
+#: model:ir.ui.menu,name:employee_management.menu_school_profile
+#: model_terms:ir.ui.view,arch_db:employee_management.student_report_template
+msgid "School"
+msgstr "School"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.school_mail_template
+msgid "School Email Template"
+msgstr "School-e-mailsjabloon"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__s_id
+msgid "School ID"
+msgstr "School-ID"
+
+#. module: employee_management
+#: model:ir.ui.menu,name:employee_management.menu_schoool_management_root
+msgid "School Management"
+msgstr "Schoolmanagement"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_profile_model_action
+#: model:ir.model,name:employee_management.model_school_profile
+msgid "School Profile"
+msgstr "Schoolprofiel"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.school_wizard_action
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_wizard
+msgid "School Wizard"
+msgstr "School tovenaar"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_profile_update_wizard
+msgid "School wizard"
+msgstr "School-tovenaar"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail"
+msgstr "Verzend mail"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Send mail with compose"
+msgstr "E-mail verzenden met opstellen"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Sr no"
+msgstr "Sorry. Nee"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__states
+#: model:ir.model.fields,field_description:employee_management.field_school_student__states
+msgid "State"
+msgstr "Staat"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_student__state
+msgid "Status"
+msgstr "Toestand"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status gebaseerd op activiteiten\n"
+"Te laat: vervaldatum is al verstreken\n"
+"Vandaag: de activiteitsdatum is vandaag\n"
+"Gepland: toekomstige activiteiten."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__step
+msgid "Step"
+msgstr "Stap"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__street
+#: model:ir.model.fields,field_description:employee_management.field_school_student__street
+msgid "Street"
+msgstr "Straat"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_model_action
+#: model:ir.model.fields,field_description:employee_management.field_school_student__name
+#: model:ir.model.fields,field_description:employee_management.field_student_update_wizard__student_ids
+#: model:ir.ui.menu,name:employee_management.menu_student
+msgid "Student"
+msgstr "Student"
+
+#. module: employee_management
+#: model:ir.actions.server,name:employee_management.ir_cron_school_student_send_ir_actions_server
+msgid "Student "
+msgstr "Student"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_student_update_wizard
+msgid "Student Address wizard"
+msgstr "Wizard Studentenadres"
+
+#. module: employee_management
+#: model:mail.template,name:employee_management.student_mail_template
+msgid "Student Email Template"
+msgstr "E-mailsjabloon voor studenten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__student_line
+msgid "Student Line"
+msgstr "Studentenlijn"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student New Address"
+msgstr "Nieuw adres student"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_student_update_wizard
+msgid "Student Old Address"
+msgstr "Oud adres student"
+
+#. module: employee_management
+#: model:ir.actions.report,name:employee_management.student_report_action
+msgid "Student Profile"
+msgstr "Studentenprofiel"
+
+#. module: employee_management
+#: model:ir.actions.act_window,name:employee_management.student_wizard_action
+msgid "Student Update Wizard"
+msgstr "Wizard voor studentenupdates"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_address
+msgid "Student address"
+msgstr "Studentenadres"
+
+#. module: employee_management
+#: model:ir.model,name:employee_management.model_school_student
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "Students"
+msgstr "Studenten"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__total_faculty
+msgid "Total Faculty"
+msgstr "Totale faculteit"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total course"
+msgstr "Totale cursus"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "Total faculty"
+msgstr "Totale faculteit"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__school_type
+msgid "Type of School "
+msgstr "Soort school"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type van de geregistreerde uitzonderingsactiviteit."
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__user_ids
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: employee_management
+#: model:ir.model.fields.selection,name:employee_management.selection__school_faculty__rating__2
+#: model:ir.model.fields.selection,name:employee_management.selection__school_profile__priority__2
+msgid "Very Good"
+msgstr "Erg goed"
+
+#. module: employee_management
+#: model:school.profile,name:employee_management.school_demo_4
+msgid "Vijay International School"
+msgstr "Vijay Internationale School"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_profile__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: employee_management
+#: model:ir.model.fields,help:employee_management.field_school_profile__website_message_ids
+msgid "Website communication history"
+msgstr "Communicatiegeschiedenis van websites"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_address__zip_code
+#: model:ir.model.fields,field_description:employee_management.field_school_student__zip_code
+msgid "Zip Code"
+msgstr "Postcode"
+
+#. module: employee_management
+#: model:ir.model.fields,field_description:employee_management.field_school_faculty__linkedin_url
+msgid "`Linkedin url`"
+msgstr "`Linkedin-URL`"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "barcode"
+msgstr "streepjescode"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "course"
+msgstr "cursus"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.school_profile_template
+msgid "dp"
+msgstr "dp"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.view_school_profile_form
+msgid "faculty"
+msgstr "faculteit"
+
+#. module: employee_management
+#: model_terms:ir.ui.view,arch_db:employee_management.weblearns_layout
+msgid "logo"
+msgstr "logo"
+

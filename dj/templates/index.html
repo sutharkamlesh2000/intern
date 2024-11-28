@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %} CRED {% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Student List</h2>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for std in students %}
+                    <tr id="student-{{std.id}}">
+                        <th>{{ forloop.counter }}</th>
+                        <td>{{ std.name }}</td>
+                        <td>{{ std.email }}</td>
+                        <td>{{ std.age }}</td>
+                        <td class="d-flex p-2">
+                            <a href="" data-url="{% url 'get_studnet_details' %}" class="btn-edit btn btn-secondary" data-id="{{ std.id }}">Edit</a>
+                            <a class="btn btn-danger btn-delete" data-url="{% url 'delete_student'%}" data-id="{{ std.id }}" >Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h2>Add/Edit Student</h2>
+            <form id="student-form" method="post">
+                {% csrf_token %}
+                <input id="student_id" type="text" value=""></input>
+                <!-- {{std_form.as_p}} -->
+                {{std_form.non_field_errors}}
+                {% for field in std_form %}
+                    <div class="">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}  <!-- Render the field -->
+                        {% if field.errors %}
+                            <div class="text-danger">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <input name="Save" type="submit" id="btn-save" class="btn btn-secondary"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function () {
+        $(".btn-edit").click(function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            // var url = $(this).attr('href')
+            var url = $(this).data('url')
+            console.log(id, '-->id');
+            console.log(url,'-->url')
+            $.ajax({
+                url:url,
+                method:'get',
+                data:{
+                    'id':id,
+                },
+                success:function(response){
+                    console.log('response--->',response)
+                    $("#student_id").val(response.student.id);
+                    $("#id_name").val(response.student.name);
+                    $("#id_email").val(response.student.email);
+                    $("#id_age").val(response.student.age);
+                }
+            })
+
+
+        });
+    });
+
+    $(document).ready(function(){
+        $(".btn-delete").click(function(e){
+            var id = $(this).data('id');
+            // var url = $(this).attr('href');
+            var url = $(this).data('url')
+            var raw = $(this).closest('tr')
+            console.log('------>',url)
+            $.ajax({
+                url:url,
+                method:'post',
+                data:{
+                    'id':id,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success:function(res){
+                    alert('Record Deleted...!')
+                    console.log('-=-=-=-=-res----=-=-=--=-=-=',res)
+                    res.forEach(element => {
+                        console.log('element ->>>',element)
+                    });
+                    // $(this).closest("tr").remove();
+                    raw.remove()
+                }
+            })
+        })
+    })
+    // $("#student-form").submit(function(e){
+    //   e.preventDefault()
+    //   var data = $(this).serializeArray()
+    //   $.ajax({
+
+    //   })
+    // })
+
+    $(document).ready(function () {
+        $('#btn-save').click(function (e) {
+            e.preventDefault()
+            var name = $("#id_name").val();
+            var email = $("#id_email").val();;
+            var age = $("#id_age").val();
+            var id = $("#student_id").val();
+            data={}
+            var url = ``
+            if(id){
+                data = {
+                    'id':id,
+                    'name': name,
+                    'email': email,
+                    'age': age,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                }
+                url = `update/student/`
+            }else{
+                data = {
+                    'name': name,
+                    'email': email,
+                    'age': age,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                } 
+                url = `create/student/`
+            }
+            console.log('url--------',url)
+            $.ajax({
+                url: url,
+                method: 'post',
+                data: data,
+                success: function (res) {
+                    var new_raw = `
+                    <tr id="student-${res.id}">
+                        <th>${$('.table tbody tr').length+1}</th>
+                        <td>${res.name}</td>
+                        <td>${res.email}</td>
+                        <td>${res.age}</td>
+                        <td class="d-flex p-2">
+                            <a href=""  data-url="get/student/details/" class="btn-edit btn btn-secondary" data-id="${res.id}">Edit</a>
+                            <a href="" data-url="delete/student/" class="btn btn-danger btn-delete" data-id="${res.id}">Delete</a>
+                        </td>
+                    </tr>
+                    `
+                    $(".table tbody").append(new_raw)
+
+                    $("#id_name").val(' ');
+                    $("#id_email").val(' ');
+                    $("#id_age").val(' ');
+                },
+            })
+        })
+    })
+</script>
+{% endblock javascript %}

@@ -1,0 +1,39 @@
+<odoo>
+    <template id="products_list" name="Products">
+        <t t-call="website.layout">
+            <t t-name="product_list_template">
+                <div class="product-list-container" style="width: 80%; margin: 0 auto; font-family: Arial, sans-serif;">
+                    <h2 style="text-align: center; color: #333;">Product List</h2>
+                    <div class="search-container" style="text-align: center; margin-bottom: 20px;">
+                        <input type="text" name="product_search"  t-on-change="handleInputChange" id="product-search" placeholder="Search products..." style="padding: 10px; width: 80%; max-width: 400px; border-radius: 25px; border: 1px solid #ddd; font-size: 16px; outline: none; transition: all 0.3s;" />
+                        <button id="search-product-btn" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; margin-left: 10px;">
+                            Search
+                        </button>
+                    </div>
+                    <t t-foreach="products" t-as="product">
+                        <div class="product-item" style="border: 1px solid #ddd; margin-bottom: 20px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                            <div class="product-info" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="product-image" style="flex-shrink: 0; width: 120px; height: 120px; background-color: #f4f4f4; display: flex; align-items: center; justify-content: center;">
+                                    <img t-if="product.image_1920" t-att-src="image_data_uri(product.image_1920)" style="max-width: 100%; max-height: 100%; object-fit: cover;" alt="Product Image"/>
+                                </div>
+                                
+                                <div class="product-details" style="flex-grow: 1; margin-left: 20px;">
+                                    <h3 style="margin: 0; color: #007bff; font-size: 20px;"><t t-esc="product.name"/></h3>
+                                    <p style="margin: 5px 0; color: #666; font-size: 14px;"><strong>Description:</strong> <t t-esc="product.description_sale"/></p>
+                                    <p style="margin: 5px 0; color: #333; font-size: 16px;"><strong>Price:</strong> <t t-esc="product.list_price"/> USD</p>
+                                    <p style="margin: 5px 0; color: #333; font-size: 14px;"><strong>Available Stock:</strong> <t t-esc="product.qty_available"/></p>
+                                </div>
+            
+                                <div class="product-action" style="text-align: center;">
+                                    <button style="padding: 10px 15px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                                        <t t-esc="'Add to cart'"></t>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>            
+        </t>
+    </template>
+</odoo>

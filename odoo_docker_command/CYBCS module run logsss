@@ -1,0 +1,166 @@
+CYBCS module run logsss:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+erp@erp-H410M-S2:~$ docker run --rm -v /home/erp/Projects/openeducat_17/addons:/mnt/extra-addons -v /home/erp/Projects/openeducat_17/conf:/etc/odoo/ -v /home/erp/Projects/openeducat_17/filestore:/var/lib/odoo -p 8069:8069 --name openeducat_17 --link dbpg13:db -t oec_custom:17.0 -d paytabs_cybcs -i payment_paytabs_odoo --without-demo=all
+Running as user 'root' is a security risk.
+2024-07-12 05:44:35,480 1 INFO ? odoo: Odoo version 17.0 
+2024-07-12 05:44:35,480 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2024-07-12 05:44:35,480 1 INFO ? odoo: addons paths: ['/opt/odoo/server/odoo/addons', '/var/lib/odoo/addons/17.0', '/opt/odoo/server/addons', '/mnt/extra-addons/openeducat-enterprise', '/mnt/extra-addons/openeducat_erp', '/mnt/extra-addons/payment-gateway'] 
+2024-07-12 05:44:35,480 1 INFO ? odoo: database: erp@172.17.0.2:5432 
+2024-07-12 05:44:35,622 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2024-07-12 05:44:35,877 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on dab051f037e5:8069 
+2024-07-12 05:44:35,885 1 INFO paytabs_cybcs odoo.modules.loading: loading 1 modules... 
+2024-07-12 05:44:35,890 1 INFO paytabs_cybcs odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2024-07-12 05:44:35,904 1 INFO paytabs_cybcs odoo.modules.loading: updating modules list 
+2024-07-12 05:44:35,906 1 INFO paytabs_cybcs odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2024-07-12 05:44:36,641 1 INFO paytabs_cybcs odoo.modules.loading: loading 61 modules... 
+2024-07-12 05:44:37,738 1 INFO paytabs_cybcs odoo.modules.loading: Loading module payment_paytabs_odoo (59/61) 
+2024-07-12 05:44:37,918 1 INFO paytabs_cybcs odoo.modules.registry: module payment_paytabs_odoo: creating or updating database tables 
+2024-07-12 05:44:37,965 1 INFO paytabs_cybcs odoo.modules.loading: loading payment_paytabs_odoo/views/payment_provider_views.xml 
+2024-07-12 05:44:38,036 1 INFO paytabs_cybcs odoo.modules.loading: loading payment_paytabs_odoo/views/payment_paytabs_templates.xml 
+2024-07-12 05:44:38,042 1 INFO paytabs_cybcs odoo.modules.loading: loading payment_paytabs_odoo/data/payment_method_data.xml 
+2024-07-12 05:44:38,054 1 INFO paytabs_cybcs odoo.modules.loading: loading payment_paytabs_odoo/data/payment_provider_data.xml 
+2024-07-12 05:44:38,121 1 INFO paytabs_cybcs odoo.modules.loading: Module payment_paytabs_odoo loaded in 0.38s, 118 queries (+118 other) 
+2024-07-12 05:44:38,134 1 INFO paytabs_cybcs odoo.modules.loading: 61 modules loaded in 1.49s, 118 queries (+118 extra) 
+2024-07-12 05:44:38,785 1 INFO paytabs_cybcs odoo.modules.loading: Modules loaded. 
+2024-07-12 05:44:38,788 1 INFO paytabs_cybcs odoo.modules.registry: Registry loaded in 2.911s 
+2024-07-12 05:44:38,791 1 INFO paytabs_cybcs odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2024-07-12 05:44:38,857 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:38] "GET /websocket HTTP/1.1" 101 - 10 0.003 2.008
+2024-07-12 05:44:38,870 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2024-07-12 05:44:41,772 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:41] "GET /web?debug=1 HTTP/1.1" 200 - 68 0.023 0.173
+2024-07-12 05:44:41,943 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:41] "POST /mail/init_messaging HTTP/1.1" 200 - 43 0.020 0.019
+2024-07-12 05:44:41,984 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:41] "POST /web/action/load HTTP/1.1" 200 - 11 0.004 0.086
+2024-07-12 05:44:41,996 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:41] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 4 0.001 0.060
+2024-07-12 05:44:42,125 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:42] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.003 0.012
+2024-07-12 05:44:42,155 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:42] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.009 0.009
+2024-07-12 05:44:42,178 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:42] "POST /web/dataset/call_kw/ir.config_parameter/get_views HTTP/1.1" 200 - 20 0.017 0.030
+2024-07-12 05:44:42,196 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:42] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 9 0.007 0.012
+2024-07-12 05:44:42,293 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:42] "POST /web/dataset/call_kw/ir.config_parameter/web_read HTTP/1.1" 200 - 3 0.002 0.006
+2024-07-12 05:44:43,371 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "GET /web?debug=1 HTTP/1.1" 200 - 12 0.008 0.028
+2024-07-12 05:44:43,473 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /web/action/load HTTP/1.1" 200 - 8 0.002 0.005
+2024-07-12 05:44:43,506 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /mail/init_messaging HTTP/1.1" 200 - 28 0.010 0.020
+2024-07-12 05:44:43,512 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.001 0.003
+2024-07-12 05:44:43,582 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.004 0.010
+2024-07-12 05:44:43,595 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /web/dataset/call_kw/ir.config_parameter/get_views HTTP/1.1" 200 - 2 0.002 0.008
+2024-07-12 05:44:43,597 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.002 0.005
+2024-07-12 05:44:43,619 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "POST /web/dataset/call_kw/ir.config_parameter/web_read HTTP/1.1" 200 - 2 0.002 0.007
+2024-07-12 05:44:43,631 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 7 0.005 0.010
+2024-07-12 05:44:43,880 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:43] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.008
+2024-07-12 05:44:45,261 1 INFO paytabs_cybcs werkzeug: 172.17.0.1 - - [12/Jul/2024 05:44:45] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.008
+{} .........post {}
+-----------------_get_tx_from_notification_data------------------ {}
+2024-07-12 05:45:03,724 1 WARNING paytabs_cybcs odoo.http: PayTabs: No reference found. 
+2024-07-12 05:45:03,724 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 05:45:03] "POST /payment/paytabs/return HTTP/1.0" 400 - 149 0.062 0.292
+2024-07-12 05:47:39,026 1 INFO paytabs_cybcs odoo.addons.base.models.ir_cron: Starting job `payment: post-process transactions`. 
+2024-07-12 05:47:39,043 1 INFO paytabs_cybcs odoo.addons.base.models.ir_cron: Job `payment: post-process transactions` done. 
+2024-07-12 05:57:39,404 1 INFO paytabs_cybcs odoo.addons.base.models.ir_cron: Starting job `payment: post-process transactions`. 
+2024-07-12 05:57:39,409 1 INFO paytabs_cybcs odoo.addons.base.models.ir_cron: Job `payment: post-process transactions` done. 
+2024-07-12 06:01:34,282 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 06:01:34] "GET /shop/payment HTTP/1.0" 200 - 244 0.088 0.488
+2024-07-12 06:01:34,655 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 06:01:34] "POST /shop/access_point/get HTTP/1.0" 200 - 9 0.011 0.027
+2024-07-12 06:01:34,862 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 06:01:34] "POST /shop/carrier_rate_shipment HTTP/1.0" 200 - 26 0.021 0.049
+2024-07-12 06:01:35,391 1 INFO paytabs_cybcs odoo.addons.payment.models.payment_transaction: generic and provider-specific processing values for transaction with reference tx-20240712060135:
+{'amount': 172.5,
+ 'currency_id': 150,
+ 'partner_id': 3,
+ 'provider_code': 'paytabs',
+ 'provider_id': 16,
+ 'reference': 'tx-20240712060135'} 
+{'profile_id': 147496, 'tran_type': 'sale', 'tran_class': 'ecom', 'cart_description': 'tx-20240712060135', 'cart_id': 'tx-20240712060135', 'cart_currency': 'SAR', 'cart_amount': 150.0, 'return': 'https://shreyas.int.appyiz.com/payment/paytabs/return', 'callback': 'https://shreyas.int.appyiz.com/payment/paytabs/return', 'customer_details': {'name': 'Administrator', 'email': 'admin@example.com', 'street1': 'slkdj sdlj', 'city': 'lsjd', 'state': 'ABQ', 'country': 'SA', 'zip': '124563'}, 'shipping_details': {'name': 'Administrator', 'email': 'admin@example.com', 'street1': 'slkdj sdlj', 'city': 'lsjd', 'state': 'ABQ', 'country': 'SA', 'zip': '124563'}} .DATA IN REQ 
+
+
+
+
+
+<Response [200]> .response
+{"tran_ref":"TST2419402044423","tran_type":"Sale","cart_id":"tx-20240712060135","cart_description":"tx-20240712060135","cart_currency":"SAR","cart_amount":"150.00","tran_currency":"INR","tran_total":"3424.65","callback":"https://shreyas.int.appyiz.com/payment/paytabs/return","return":"https://shreyas.int.appyiz.com/payment/paytabs/return","redirect_url":"https://secure-global.paytabs.com/payment/wr/5C6303D882E416BA36CBB3CC417122012224AEA4384874E3A9A1A262","customer_details":{"name":"Administrator","email":"admin@example.com","street1":"slkdj sdlj","city":"lsjd","country":"SA","zip":"124563","ip":"139.59.29.190"},"shipping_details":{"name":"Administrator","email":"admin@example.com","street1":"slkdj sdlj","city":"lsjd","country":"SA","zip":"124563"},"serviceId":2,"profileId":147496,"merchantId":88067,"trace":"PMNT0705.6690C6C0.0000098E"}
+ .response
+2024-07-12 06:01:37,277 1 INFO paytabs_cybcs odoo.addons.payment.models.payment_transaction: provider-specific rendering values for transaction with reference tx-20240712060135:
+{'api_url': 'https://secure-global.paytabs.com/payment/wr/5C6303D882E416BA36CBB3CC417122012224AEA4384874E3A9A1A262',
+ 'callback': 'https://shreyas.int.appyiz.com/payment/paytabs/return',
+ 'cart_amount': '150.00',
+ 'cart_currency': 'SAR',
+ 'cart_description': 'tx-20240712060135',
+ 'cart_id': 'tx-20240712060135',
+ 'customer_details': {'city': 'lsjd',
+                      'country': 'SA',
+                      'email': 'admin@example.com',
+                      'ip': '139.59.29.190',
+                      'name': 'Administrator',
+                      'street1': 'slkdj sdlj',
+                      'zip': '124563'},
+ 'merchantId': 88067,
+ 'profileId': 147496,
+ 'redirect_url': 'https://secure-global.paytabs.com/payment/wr/5C6303D882E416BA36CBB3CC417122012224AEA4384874E3A9A1A262',
+ 'return': 'https://shreyas.int.appyiz.com/payment/paytabs/return',
+ 'serviceId': 2,
+ 'shipping_details': {'city': 'lsjd',
+                      'country': 'SA',
+                      'email': 'admin@example.com',
+                      'name': 'Administrator',
+                      'street1': 'slkdj sdlj',
+                      'zip': '124563'},
+ 'trace': 'PMNT0705.6690C6C0.0000098E',
+ 'tran_currency': 'INR',
+ 'tran_ref': 'TST2419402044423',
+ 'tran_total': '3424.65',
+ 'tran_type': 'Sale'} 
+2024-07-12 06:01:37,324 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 06:01:37] "POST /shop/payment/transaction/1 HTTP/1.0" 200 - 37 0.034 1.978
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{} .........post {}
+-----------------_get_tx_from_notification_data------------------ {}
+2024-07-12 06:01:43,592 1 WARNING paytabs_cybcs odoo.http: PayTabs: No reference found. 
+2024-07-12 06:01:43,592 1 INFO paytabs_cybcs werkzeug: 10.8.0.1 - - [12/Jul/2024 06:01:43] "POST /payment/paytabs/return HTTP/1.0" 400 - 5 0.008 0.037
+{'acquirerMessage': '', 'acquirerRRN': '', 'cartId': 'tx-20240712060135', 'customerEmail': 'admin@example.com', 'respCode': '321', 'respMessage': 'Cancelled', 'respStatus': 'C', 'signature': 'e77743ff97c8e0b5dc45fb34a523a58e84f477c9242ec9698f87ed0e0d0812a2', 'token': '', 'tranRef': 'TST2419402044423'} .........post {'acquirerMessage': '', 'acquirerRRN': '', 'cartId': 'tx-20240712060135', 'customerEmail': 'admin@example.com', 'respCode': '321', 'respMessage': 'Cancelled', 'respStatus': 'C', 'signature': 'e77743ff97c8e0b5dc45fb34a523a58e84f477c9242ec9698f87ed0e0d0812a2', 'token': '', 'tranRef': 'TST2419402044423'}
+-----------------_get_tx_from_notification_data------------------ {'acquirerMessage': '', 'acquirerRRN': '', 'cartId': 'tx-20240712060135', 'customerEmail': 'admin@example.com', 'respCode': '321', 'respMessage': 'Cancelled', 'respStatus': 'C', 'signature': 'e77743ff97c8e0b5dc45fb34a523a58e84f477c9242ec9698f87ed0e0d0812a2', 'token': '', 'tranRef': 'TST2419402044423'}
+-----------------_get_tx_from_notification_data------------------ {'acquirerMessage': '', 'acquirerRRN': '', 'cartId': 'tx-20240712060135', 'customerEmail': 'admin@example.com', 'respCode': '321', 'respMessage': 'Cancelled', 'respStatus': 'C', 'signature': 'e77743ff97c8e0b5dc45fb34a523a58e84f477c9242ec9698f87ed0e0d0812a2', 'token': '', 'tranRef': 'TST2419402044423'}
+2024-07-12 06:01:43,857 1 WARNING paytabs_cybcs odoo.addons.payment_paytabs_odoo.models.payment_transaction: Received unrecognized payment state C for transaction with reference tx-20240712060135 
+
+
+
+
+
+
+
+
+
+
+
